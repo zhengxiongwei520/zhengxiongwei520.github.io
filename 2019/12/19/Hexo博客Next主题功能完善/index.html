@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="CodeZheng">
 <meta property="og:description" content="本文讲述Hexo博客Next主题功能完善，包括：语言，菜单，头像，阅读全文，基本信息...">
 <meta property="article:published_time" content="2019-12-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-12-18T20:00:37.670Z">
+<meta property="article:modified_time" content="2019-12-18T20:24:23.846Z">
 <meta property="article:author" content="Xiognwei Zheng">
 <meta property="article:tag" content="Next">
 <meta property="article:tag" content="个人博客">
@@ -394,7 +394,11 @@
 
 <h5 id="数据统计与分析"><a href="#数据统计与分析" class="headerlink" title="数据统计与分析"></a>数据统计与分析</h5><h6 id="不蒜子统计-在5-0-1版本后引入"><a href="#不蒜子统计-在5-0-1版本后引入" class="headerlink" title="不蒜子统计(在5.0.1版本后引入)"></a>不蒜子统计(在5.0.1版本后引入)</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">进入 主题配置文件 修改如下字段</span><br><span class="line"></span><br><span class="line">busuanzi_count:</span><br><span class="line">  # 设置为true打开不蒜子统计</span><br><span class="line">  enable: true #false</span><br><span class="line">  # 全站访问人数</span><br><span class="line">  site_uv: true</span><br><span class="line">  site_uv_header: 本站访客数 </span><br><span class="line">  site_uv_footer: 人次</span><br><span class="line">  # 全站访问量</span><br><span class="line">  site_pv: true</span><br><span class="line">  site_pv_header: 本站总访问量 </span><br><span class="line">  site_pv_footer: 次</span><br><span class="line">  # 单页面(文章页面)阅读量</span><br><span class="line">  page_pv: true</span><br><span class="line">  page_pv_header: 本文总阅读量 </span><br><span class="line">  page_pv_footer: 次</span><br></pre></td></tr></table></figure>
 
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5></li>
+<h6 id="如果出现次数不显示的情况"><a href="#如果出现次数不显示的情况" class="headerlink" title="如果出现次数不显示的情况"></a>如果出现次数不显示的情况</h6><p><code>本文总阅读量 次</code> 这种情况的话</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">进入 my-hexo-blog\themes\next\layout\_third-party\analytics\busuanzi-couter.swig</span><br><span class="line">修改字符段：</span><br><span class="line">&lt;script async src&#x3D;&quot;https:&#x2F;&#x2F;dn-lbstatics.qbox.me&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">为</span><br><span class="line">&lt;script async src&#x3D;&quot;&#x2F;&#x2F;busuanzi.ibruce.info&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ol>
 
       
@@ -572,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo博客Next主题功能完善"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客Next主题功能完善</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#网站语言设置："><span class="nav-number">1.1.</span> <span class="nav-text">网站语言设置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#首页显示阅读全文："><span class="nav-number">1.2.</span> <span class="nav-text">首页显示阅读全文：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网站菜单设置："><span class="nav-number">1.3.</span> <span class="nav-text">网站菜单设置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置头像"><span class="nav-number">1.4.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置网站基本信息-作者昵称，网站描述，网站标题"><span class="nav-number">1.5.</span> <span class="nav-text">设置网站基本信息(作者昵称，网站描述，网站标题)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加【分类】页面-categories-添加【标签】页面-tags"><span class="nav-number">1.6.</span> <span class="nav-text">添加【分类】页面(categories)&#x2F;添加【标签】页面(tags)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码高亮色主题"><span class="nav-number">1.7.</span> <span class="nav-text">代码高亮色主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据统计与分析"><span class="nav-number">1.8.</span> <span class="nav-text">数据统计与分析</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不蒜子统计-在5-0-1版本后引入"><span class="nav-number">1.8.1.</span> <span class="nav-text">不蒜子统计(在5.0.1版本后引入)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.9.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo博客Next主题功能完善"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客Next主题功能完善</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#网站语言设置："><span class="nav-number">1.1.</span> <span class="nav-text">网站语言设置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#首页显示阅读全文："><span class="nav-number">1.2.</span> <span class="nav-text">首页显示阅读全文：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网站菜单设置："><span class="nav-number">1.3.</span> <span class="nav-text">网站菜单设置：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置头像"><span class="nav-number">1.4.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置网站基本信息-作者昵称，网站描述，网站标题"><span class="nav-number">1.5.</span> <span class="nav-text">设置网站基本信息(作者昵称，网站描述，网站标题)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加【分类】页面-categories-添加【标签】页面-tags"><span class="nav-number">1.6.</span> <span class="nav-text">添加【分类】页面(categories)&#x2F;添加【标签】页面(tags)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码高亮色主题"><span class="nav-number">1.7.</span> <span class="nav-text">代码高亮色主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据统计与分析"><span class="nav-number">1.8.</span> <span class="nav-text">数据统计与分析</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不蒜子统计-在5-0-1版本后引入"><span class="nav-number">1.8.1.</span> <span class="nav-text">不蒜子统计(在5.0.1版本后引入)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如果出现次数不显示的情况"><span class="nav-number">1.8.2.</span> <span class="nav-text">如果出现次数不显示的情况</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -617,22 +621,10 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
-      本站访客数
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人次
-    </span>
-  
 
-  
-    <span class="site-pv">
-      本站总访问量
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
   
 </div>
 
