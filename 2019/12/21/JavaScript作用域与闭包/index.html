@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="全面解析作用域、闭包">
+<meta name="description" content="作用域、闭包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript作用域与闭包">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;21&#x2F;JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85&#x2F;index.html">
 <meta property="og:site_name" content="CodeZheng">
-<meta property="og:description" content="全面解析作用域、闭包">
+<meta property="og:description" content="作用域、闭包">
 <meta property="article:published_time" content="2019-12-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-12-23T19:35:35.705Z">
+<meta property="article:modified_time" content="2019-12-31T21:35:55.214Z">
 <meta property="article:author" content="Xiognwei Zheng">
 <meta property="article:tag" content="作用域">
 <meta property="article:tag" content="闭包">
@@ -348,7 +348,7 @@
 
           
               <div class="post-description">
-                  全面解析作用域、闭包
+                  作用域、闭包
               </div>
           
 
@@ -374,7 +374,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">词法阶段介绍：</span><br><span class="line">	大部分标准语言编译器的第一个工作阶段是分词&#x2F;词法分析（Tokenizing&#x2F;Lexing）</span><br><span class="line">	该阶段会把由字符组成的字符串分解成对编程语言由意义的代码块。例如：var a &#x3D; 2;</span><br><span class="line">	这段程序通常会被分解成下面这些词法单元（token）：var、a、&#x3D;、2、;。</span><br></pre></td></tr></table></figure>
 
 <h6 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h6><p>​    全局作用域中包含的变量（标识符）可以在任何地方都可以被访问到。</p>
-<h4 id="作用域链（scope-chain）"><a href="#作用域链（scope-chain）" class="headerlink" title="作用域链（scope chain）"></a>作用域链（scope chain）</h4><p>​    当作用域嵌套时，引擎从当前执行作用域开始查找变量，如果找不到，就往上一级继续查找，直到抵达最外层的全局作用域，无论是否找到，查找过程都会停止。</p>
+<h4 id="作用域链（scope-chain）"><a href="#作用域链（scope-chain）" class="headerlink" title="作用域链（scope chain）"></a>作用域链（scope chain）</h4><p>​    当作用域嵌套时，引擎从当前执行作用域开始查找变量，如果找不到，就往上一级（）继续查找，直到抵达最外层的全局作用域，无论是否找到，查找过程都会停止。</p>
 <h4 id="作用域嵌套例子"><a href="#作用域嵌套例子" class="headerlink" title="作用域嵌套例子"></a>作用域嵌套例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = a * <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a, b, c);</span><br><span class="line">    &#125;</span><br><span class="line">    bar(b * <span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">2</span>); <span class="comment">// 2, 4, 12</span></span><br></pre></td></tr></table></figure>
 
 <p>​    这个例子中有3个逐级嵌套的作用域，为了方便理解可以想象成几个逐级包含的“气泡”。</p>
@@ -425,13 +425,15 @@
 <p>​    这时候就有了 <code>闭包</code> 的诞生，在函数外部也能访问到函数内部作用域的变量。</p>
 <p>​    <code>闭包</code> 拥有权限访问函数内部作用域本质是：子函数（闭包）依赖于上级作用域，导致上级作用域不会被<code>垃圾收集机制</code>收回，所以能够在函数外部通过闭包调用函数内部的作用域，也导致了变量始终保持在内存中，过多的闭包会导致性能下降。</p>
 <hr>
-<h6 id="本文参考书籍、链接："><a href="#本文参考书籍、链接：" class="headerlink" title="本文参考书籍、链接："></a>本文参考书籍、链接：</h6><ul>
+<p><strong>本文参考书籍、链接：</strong></p>
+<ul>
 <li>《you don’t know JavaScript/你不知道的JavaScript（上卷）》</li>
 <li>《professional JavaScript for Web developers/JavaScript高级程序设计 第3版》</li>
 <li><a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="noopener">阮一峰的网络日志</a></li>
 </ul>
-<hr>
-<h6 id="注：本文放弃了《JavaScript高级程序设计-第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。"><a href="#注：本文放弃了《JavaScript高级程序设计-第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。" class="headerlink" title="注：本文放弃了《JavaScript高级程序设计 第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。"></a>注：本文放弃了《JavaScript高级程序设计 第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。</h6><h6 id="在执行环境-上下文-作用域-这块内容它是按照-ES3-标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5-ES6-都抛弃了书中提到的-VO-AO-变量对象-活动对象-等概念，用的是-词法作用域-等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。"><a href="#在执行环境-上下文-作用域-这块内容它是按照-ES3-标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5-ES6-都抛弃了书中提到的-VO-AO-变量对象-活动对象-等概念，用的是-词法作用域-等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。" class="headerlink" title="在执行环境(上下文)/作用域 这块内容它是按照 ES3 标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5 ES6+都抛弃了书中提到的 VO/AO(变量对象/活动对象) 等概念，用的是 词法作用域 等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。"></a>在执行环境(上下文)/作用域 这块内容它是按照 ES3 标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5 ES6+都抛弃了书中提到的 VO/AO(变量对象/活动对象) 等概念，用的是 词法作用域 等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。</h6><p>​    </p>
+<p>注：本文放弃了《JavaScript高级程序设计 第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。</p>
+<p>在执行环境(上下文)/作用域 这块内容它是按照 ES3 标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5 ES6+都抛弃了书中提到的 VO/AO(变量对象/活动对象) 等概念，用的是 词法作用域 等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。</p>
+<p>​    </p>
 
       
     </div>
@@ -487,6 +489,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/24/this%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/" rel="prev" title="全面解析JavaScript中的this指针">
+                全面解析JavaScript中的this指针 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -567,7 +573,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -638,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域（Scope）"><span class="nav-number">1.</span> <span class="nav-text">作用域（Scope）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">作用域概念</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域的作用"><span class="nav-number">1.0.2.</span> <span class="nav-text">作用域的作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域模型"><span class="nav-number">1.0.3.</span> <span class="nav-text">作用域模型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#词法作用域"><span class="nav-number">1.0.4.</span> <span class="nav-text">词法作用域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#全局作用域"><span class="nav-number">1.0.5.</span> <span class="nav-text">全局作用域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域链（scope-chain）"><span class="nav-number">2.</span> <span class="nav-text">作用域链（scope chain）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域嵌套例子"><span class="nav-number">3.</span> <span class="nav-text">作用域嵌套例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数作用域与块作用域"><span class="nav-number">4.</span> <span class="nav-text">函数作用域与块作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域分类"><span class="nav-number">5.</span> <span class="nav-text">作用域分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域闭包"><span class="nav-number">6.</span> <span class="nav-text">作用域闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更一步了解闭包"><span class="nav-number">7.</span> <span class="nav-text">更一步了解闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包终极例子"><span class="nav-number">8.</span> <span class="nav-text">闭包终极例子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包作用"><span class="nav-number">8.1.</span> <span class="nav-text">闭包作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包的应用场景"><span class="nav-number">8.2.</span> <span class="nav-text">闭包的应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域-闭包总结"><span class="nav-number"></span> <span class="nav-text">作用域&#x2F;闭包总结</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#本文参考书籍、链接："><span class="nav-number">0.0.1.</span> <span class="nav-text">本文参考书籍、链接：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注：本文放弃了《JavaScript高级程序设计-第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。"><span class="nav-number">0.0.2.</span> <span class="nav-text">注：本文放弃了《JavaScript高级程序设计 第3版》中对于执行环境以及作用域的内容。原因是这本书主要谈论的是ECMAscript3的标注内容，并对ES5进行部分补充。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在执行环境-上下文-作用域-这块内容它是按照-ES3-标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5-ES6-都抛弃了书中提到的-VO-AO-变量对象-活动对象-等概念，用的是-词法作用域-等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。"><span class="nav-number">0.0.3.</span> <span class="nav-text">在执行环境(上下文)&#x2F;作用域 这块内容它是按照 ES3 标准来教学。但是ES3是2000年发布的，部分内容已过时，后来的ES5 ES6+都抛弃了书中提到的 VO&#x2F;AO(变量对象&#x2F;活动对象) 等概念，用的是 词法作用域 等概念，也就是《你不知道的JavaScript》中对于作用域的解释内容。</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域（Scope）"><span class="nav-number">1.</span> <span class="nav-text">作用域（Scope）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">作用域概念</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域的作用"><span class="nav-number">1.0.2.</span> <span class="nav-text">作用域的作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域模型"><span class="nav-number">1.0.3.</span> <span class="nav-text">作用域模型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#词法作用域"><span class="nav-number">1.0.4.</span> <span class="nav-text">词法作用域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#全局作用域"><span class="nav-number">1.0.5.</span> <span class="nav-text">全局作用域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域链（scope-chain）"><span class="nav-number">2.</span> <span class="nav-text">作用域链（scope chain）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域嵌套例子"><span class="nav-number">3.</span> <span class="nav-text">作用域嵌套例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数作用域与块作用域"><span class="nav-number">4.</span> <span class="nav-text">函数作用域与块作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域分类"><span class="nav-number">5.</span> <span class="nav-text">作用域分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域闭包"><span class="nav-number">6.</span> <span class="nav-text">作用域闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更一步了解闭包"><span class="nav-number">7.</span> <span class="nav-text">更一步了解闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包终极例子"><span class="nav-number">8.</span> <span class="nav-text">闭包终极例子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包作用"><span class="nav-number">8.1.</span> <span class="nav-text">闭包作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包的应用场景"><span class="nav-number">8.2.</span> <span class="nav-text">闭包的应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域-闭包总结"><span class="nav-number"></span> <span class="nav-text">作用域&#x2F;闭包总结</span></a></div>
             
 
           </div>
@@ -658,7 +664,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
