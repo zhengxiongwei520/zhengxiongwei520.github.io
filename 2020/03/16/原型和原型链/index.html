@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="原型,原型链,对象,面向对象," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="原型与原型链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型、原型链、原型继承以及设计模式">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;16&#x2F;%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE&#x2F;index.html">
+<meta property="og:site_name" content="CodeZheng">
+<meta property="og:description" content="原型与原型链">
+<meta property="article:published_time" content="2020-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-24T21:41:56.521Z">
+<meta property="article:author" content="Xiognwei Zheng">
+<meta property="article:tag" content="原型">
+<meta property="article:tag" content="原型链">
+<meta property="article:tag" content="对象">
+<meta property="article:tag" content="面向对象">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/16/原型和原型链/"/>
+
+
+
+
+
+  <title>原型、原型链、原型继承以及设计模式 | CodeZheng</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CodeZheng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiognwei Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/zxw_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeZheng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">原型、原型链、原型继承以及设计模式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T00:00:00+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  原型与原型链
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h1><p>一段弱智代码，回答我的问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'i am string'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.length) <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>‘i am string’是字面量还是对象？</p>
+</li>
+<li><p>如果它只是一个字面量，为什么能使用<code>.length</code>这种<code>对象属性访问的方式</code>访问一个字面量？</p>
+</li>
+<li><p>以及它是如何查找到<code>length</code>这个属性的（<code>对象访问属性</code>的本质）？</p>
+</li>
+</ol>
+<p>回答：</p>
+<ol>
+<li>‘i am string’是一个字符串字面量，在JavaScript中被归类为基本数据类型。</li>
+<li>JavaScript引擎会在必要时将字符串字面量转换成<code>String对象(内置对象)</code>，JavaScript中的内置对象存储了一些通用方法，所以可以使用<code>.length</code>进行对象的属性访问。</li>
+<li>当访问属性时，引擎实际上会调用[[Get]]操作（设置属性时时[[Put]]操作），如果无法在自身找到需要的属性，就会继续访问对象的<code>__proto__</code>属性，而str的<code>__proto___</code>属性正好是String对象。</li>
+</ol>
+<h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><p><strong>访问对象的属性时，在当前对象找不到会继续访问对象的<code>__proto__</code>属性，<code>__proto__</code>属性的值是一般是对象（把它称为pro对象）。如果在pro对象上依然没有找到，就会继续访问pro对象上的<code>__proto__</code>属性（称为propro对象），如果propro对象上还是没有就继续访问<code>__proto__</code>属性，一直按照这个规则查找直到终点，这就是原型链。</strong></p>
+<h5 id="原型链终点-所有的原型链最终都是指向内置的Object-prototype"><a href="#原型链终点-所有的原型链最终都是指向内置的Object-prototype" class="headerlink" title="原型链终点:所有的原型链最终都是指向内置的Object.prototype"></a><code>原型链终点:所有的原型链最终都是指向内置的Object.prototype</code></h5><hr>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">	a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">myObject.__proto__ = &#123;</span><br><span class="line">    b:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(myObject.b)</span><br></pre></td></tr></table></figure>
+
+<p>如上例子可知，myObject对象中并没有b属性，但是<code>__proto__</code>属性中拥有，所以能够访问到b属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里再介绍一个对象关联方法</span></span><br><span class="line"><span class="keyword">var</span> aObject  =&#123;</span><br><span class="line">	a:<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bObject = <span class="built_in">Object</span>.create(aObject)  <span class="comment">// bObject.__proto__ = aObject简单的这样理解</span></span><br><span class="line">bObject.a  <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<p>Object.create()会创建一个新的对象(bObject)，并把它(bObject)的<code>__proto__</code>属性关联到指定对象(aObject)</p>
+<h3 id="使用new来关联对象-面向对象"><a href="#使用new来关联对象-面向对象" class="headerlink" title="使用new来关联对象/面向对象"></a>使用new来关联对象/面向对象</h3><p>从上面几个例子我们就知道了原型链可以用来作为对象之间的关联，为了更深入的使用原型链，我们应该知道函数也是对象的一部分，所以也可以通过原型链来关联函数与对象。最典型的例子就是使用new构造函数来创建对象，new的使用改变了对象的<code>__proto__</code>属性，详细继续往下看。</p>
+<h5 id="new会做什么"><a href="#new会做什么" class="headerlink" title="new会做什么"></a>new会做什么</h5><p>当使用new来调用函数时（发生构造函数调用时），JavaScript会做以下工作：</p>
+<p>​    1.创建一个全新的对象</p>
+<p>​    2.把新对象的<code>__proto__</code>属性指向函数的<code>prototype</code>属性</p>
+<p>​    3.this指向这个新对象</p>
+<p>​    4.如果函数没有返回其他对象，则返回新对象</p>
+<p>关联对象的关键步骤就是 2. 它规定了新对象的<code>__proto__</code>指向，所以我们可以通过新对象来访问函数的prototype。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">who</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.me = who</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Foo.prototype.identify = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Foo indentify fn '</span> + <span class="keyword">this</span>.me)</span><br><span class="line">&#125;</span><br><span class="line">Foo.prototype.me = <span class="string">'prototype me'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> Foo(<span class="string">'bar'</span>)</span><br><span class="line">bar.identify()  <span class="comment">// Foo indentify fn bar</span></span><br><span class="line"><span class="built_in">console</span>.log(bar.me)  <span class="comment">// bar</span></span><br></pre></td></tr></table></figure>
+
+<p>这就是<strong>面对对象</strong>初始状态，面对对象就是通过利用原型链、new的特性来进行对象之间的关联。一般把Foo称为构造器，bar为实例对象，构造器上的prototype对象称为原型对象。</p>
+<p>这个例子中其实并没有子类，Foo是父类，bar只是父类的一个实例，并不是他的子类，bar只是通过new改变this指向、改变<code>__proto__</code>使得2个对象互相关联。如果需要在Foo基础上“继承”属性和方法创建出一个子类，并且是的子类拥有一定的重写能力，还需要其他更多的操作。</p>
+<p>如果你学过其他的语言中的面向类，比如Java中的class设计模式，来思考一下这个面对对象跟class有什么区别、不足之处。</p>
+<h3 id="拙劣的模仿类行为的设计模式-原型继承："><a href="#拙劣的模仿类行为的设计模式-原型继承：" class="headerlink" title="拙劣的模仿类行为的设计模式/原型继承："></a>拙劣的模仿类行为的设计模式/原型继承：</h3><p>​    上文说到子类如何继承父类，我们通常会参考其他编程语言，比如参考java中的class设计模式。所以JavaScript中就有一种模仿类行为的设计模式。之所以称为拙劣的模仿行为，是因为java中能够实现继承的原理跟JavaScript实现继承的原理完全不同，强行模仿只会让人难以理解。</p>
+<p>​    <strong>在Java中类的设计模式是：定义一个通用父类，子类继承父类并且鼓励在继承时使用方法重写（和多态）。在这种模式中，“继承”的方式是通过复制父类到实例中。然而JavaScript之所以能够”继承“，它并不是进行复制，而是通过原型链的特点来进行”关联“，他们使用的是同一个原型链，关联的是同一个对象。在默认情况下不会进行复制。JavaScript中只是在两个对象之间创建了一个关联，new操作规定了<code>__proto__的指向</code>，并没有复制父类，只是创建了他们之间的关联，所以称呼“继承”会让人特别疑惑，特别是学习过其他类语言的人，称呼关联或者委托更好。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">who</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.me = who</span><br><span class="line">&#125;</span><br><span class="line">Foo.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'saying '</span> + <span class="keyword">this</span>.me)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ------------------</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params">who, label</span>)</span>&#123;</span><br><span class="line">    Foo.call(<span class="keyword">this</span>, who) <span class="comment">// 改变Foo的this指向到Bar，并传入参数who</span></span><br><span class="line">    <span class="keyword">this</span>.label = label <span class="comment">// 子类自有的属性</span></span><br><span class="line">&#125;</span><br><span class="line">Bar.prototype = <span class="built_in">Object</span>.create(Foo.prototype)  <span class="comment">// 原型继承</span></span><br><span class="line">Bar.prototype.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'singing '</span> + <span class="keyword">this</span>.me)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// --------------</span></span><br><span class="line"><span class="keyword">var</span> b1 = <span class="keyword">new</span> Bar(<span class="string">'b1'</span>)</span><br><span class="line">b1.say()  <span class="comment">// saying b1</span></span><br><span class="line">b1.sing()  <span class="comment">// singing b1</span></span><br></pre></td></tr></table></figure>
+
+<p>代码已出，让我们仔细分析一下在JavaScript中是如何实现类行为的设计模式。</p>
+<ol>
+<li><p>父类的声明方式没有改变，仍然是将通用的方法添加到prototype原型对象中。</p>
+</li>
+<li><p>子类如何继承属性以及共享的方法/属性（prototype对象）？</p>
+</li>
+</ol>
+<h6 id="使用call-apply来继承父类属性。"><a href="#使用call-apply来继承父类属性。" class="headerlink" title="使用call/apply来继承父类属性。"></a>使用call/apply来继承父类属性。</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params">who, label</span>)</span>&#123;</span><br><span class="line">	Foo.call(<span class="keyword">this</span>, who) <span class="comment">// 改变Foo的this指向到Bar，并传入参数who</span></span><br><span class="line">	<span class="keyword">this</span>.label = label <span class="comment">// 子类自有的属性</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    <code>Foo.call(this, who)</code>会给Bar添加一个属性fn=Foo(who)，并将其返回，所以我们就可以在子类中访问到父类Foo的属性。</p>
+<h6 id="使用Object-create-来“继承”父类的prototype对象"><a href="#使用Object-create-来“继承”父类的prototype对象" class="headerlink" title="使用Object.create()来“继承”父类的prototype对象"></a>使用Object.create()来“继承”父类的prototype对象</h6><p>​    <code>Bar.prototype = Object.create(Foo.prototype)  // 原型继承</code></p>
+<p>​    这样就实现了子类继承父类的原型对象，也称为“原型继承“，子类从父类“继承”了他的原型对象，当我们访问子类new出来的实例时，可以访问到子类父类的原型对象。 但是我更希望称之为<code>对象关联</code>，因为JavaScript中”原型继承“的原理并不是其他类语言中的复制，而是通过原型链的特点来进行对象关联，并没有对父类进行复制生成子类。</p>
+<p><em>具体不懂call/Object.crete()还可以看文章备忘录。</em></p>
+<h3 id="更加适合JavaScript的-对象关联-行为委托-设计模式"><a href="#更加适合JavaScript的-对象关联-行为委托-设计模式" class="headerlink" title="更加适合JavaScript的 对象关联/行为委托 设计模式"></a>更加适合JavaScript的 对象关联/行为委托 设计模式</h3><p>在这种设计模式你要抛弃父类、子类的一切关于面向类的想法，来学习一种JavaScript特有的设计模式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Foo = &#123;</span><br><span class="line">	init:<span class="function"><span class="keyword">function</span>(<span class="params">who</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.me = who</span><br><span class="line">	&#125;,</span><br><span class="line">    say:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'saying '</span> + <span class="keyword">this</span>.me)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Bar = <span class="built_in">Object</span>.create(Foo)</span><br><span class="line">Bar.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'singing '</span> + <span class="keyword">this</span>.me)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b1 = <span class="built_in">Object</span>.create(Bar)</span><br><span class="line">b1.init(<span class="string">'b1'</span>)</span><br><span class="line">b1.say()</span><br><span class="line">b1.sing()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>首先定义一个对象(Foo)，它不是类也不是函数，它会包含所有任务都会使用（委托）的具体行为。接着，对于每个任务（Bar, b1）你都会定义一个对象来存储对应的数据和行为。当你执行任务需要关联（依赖于）其他对象时，我们可以让他们在需要的时候进行委托。</strong></p>
+<p>​    <strong>基本可以想象成，执行任务”Bar”时需要2个兄弟对象（Bar和Foo）协作完成。但是我们不需要把这些行为放在一起，可以分别放在各自独立的对象中，需要时把Bar对象关联（委托）给Foo。</strong></p>
+<p>​    <strong>当我们访问<code>b1.init(&#39;b1&#39;)</code>时，会先查找b1是否拥有init，没有的话就会通过原型链委托关联到Bar中继续寻找，Bar中依旧没有，就会继续沿着原型链委托关联到Foo这时候就可以找到init方法，运行时由于调用位置（b1.init()，this由上下文b1调用）的原因，this指向仍然是b1，这就是我们想要的</strong></p>
+<p>​    <strong>委托行为意味着某些对象（b1）找不到属性或者方法时会把这个请求委托给另一个对对象(Bar)，本质上还是由于原型链的特性。</strong></p>
+<hr>
+<h3 id="对比2种设计模式"><a href="#对比2种设计模式" class="headerlink" title="对比2种设计模式"></a>对比2种设计模式</h3><ol>
+<li>行为委托代码更加简洁，我们是运用原型链的原理把对象关联起来，并不需要那些复杂又令人困惑的模仿类行为（构造函数、原型、new）。</li>
+<li>类风格的思维模型强调实体与实体之间的关系，他们之间关系关系非常复杂。行为委托只关心对象之间的关联关系。（有2种设计模式原型链图片，可以放出来对比，但是由于太麻烦，图片先欠着吧。）</li>
+</ol>
+<h3 id="原型链终点问题"><a href="#原型链终点问题" class="headerlink" title="原型链终点问题"></a>原型链终点问题</h3><p>我们知道对基本数据进行操作的时候，会将数据自动转换成相应的内置对象（null,undefined除外）。我们能够访问到内置对象的相对应的方法，这些方法其实储存在对象的<code>__proto__</code>属性中，也就是说其实JavaScript初期帮我们设计了一些内置对象构造器，又因为当我们操作数据时他会自动new转换成对应的实例，所以是的我们能够访问到他当初设计在原型对象中的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">1</span> <span class="comment">// 理解为 var num1 = new Number(1) 这个是JavaScript的行为 所以num1其实成为了Number构造器的一个实例，当然就可以访问Number原型对象的方法</span></span><br><span class="line"><span class="built_in">console</span>.log(num1.__proto__)  <span class="comment">// Number</span></span><br><span class="line"><span class="built_in">console</span>.log(num1.__proto__.__proto__)  <span class="comment">// Object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 证明是在内置对象的</span></span><br><span class="line"><span class="built_in">Number</span>.prototype.myFn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'you are right'</span>)</span><br><span class="line">&#125;</span><br><span class="line">num1.myFn()  <span class="comment">// you are right</span></span><br></pre></td></tr></table></figure>
+
+<p>​    JavaScript在提前设置了一些对象的构造器，，当我们对数据进行操作时会使用new转换成相对应的实例，构造器上的原型对象就是数据中的<code>__proto__</code>属性的引用。又因为Number String Function等等内置对象属于Object，所以这些内置对象原型链上还有一层是Object，所以我们才说原型链的终点是Object.prototype。</p>
+<h4 id="如果对于文中的new、call-apply原理、Oeject-create-不太了解请移步JavaScript备忘录文章，其中有记录。"><a href="#如果对于文中的new、call-apply原理、Oeject-create-不太了解请移步JavaScript备忘录文章，其中有记录。" class="headerlink" title="如果对于文中的new、call/apply原理、Oeject.create()不太了解请移步JavaScript备忘录文章，其中有记录。"></a>如果对于文中的new、call/apply原理、Oeject.create()不太了解请移步<code>JavaScript备忘录</code>文章，其中有记录。</h4><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​    累了。。。以后在写吧。。原型链终点问题/toSring()原理那边也存在问题，先放着。。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/images/wechat-qcode.jpg" alt="Xiognwei Zheng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%8E%9F%E5%9E%8B/" rel="tag"># 原型</a>
+          
+            <a href="/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/" rel="tag"># 原型链</a>
+          
+            <a href="/tags/%E5%AF%B9%E8%B1%A1/" rel="tag"># 对象</a>
+          
+            <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag"># 面向对象</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/01/%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83%E3%80%81%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" rel="next" title="执行环境、变量对象、作用域链">
+                <i class="fa fa-chevron-left"></i> 执行环境、变量对象、作用域链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/25/%E8%A1%A5%E5%85%85%E7%82%B9/" rel="prev" title="JavaScript备忘录">
+                JavaScript备忘录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/zxw_avatar.jpg"
+                alt="Xiognwei Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Xiognwei Zheng</p>
+              <p class="site-description motion-element" itemprop="description">不朽与不变，那是故事片段。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengxiongwei520" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhengxiongwei0502@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识"><span class="nav-number">1.</span> <span class="nav-text">初识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链终点-所有的原型链最终都是指向内置的Object-prototype"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">原型链终点:所有的原型链最终都是指向内置的Object.prototype</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例子"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用new来关联对象-面向对象"><span class="nav-number">2.0.1.</span> <span class="nav-text">使用new来关联对象&#x2F;面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#new会做什么"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">new会做什么</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拙劣的模仿类行为的设计模式-原型继承："><span class="nav-number">2.0.2.</span> <span class="nav-text">拙劣的模仿类行为的设计模式&#x2F;原型继承：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#使用call-apply来继承父类属性。"><span class="nav-number">2.0.2.0.0.1.</span> <span class="nav-text">使用call&#x2F;apply来继承父类属性。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用Object-create-来“继承”父类的prototype对象"><span class="nav-number">2.0.2.0.0.2.</span> <span class="nav-text">使用Object.create()来“继承”父类的prototype对象</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更加适合JavaScript的-对象关联-行为委托-设计模式"><span class="nav-number">2.0.3.</span> <span class="nav-text">更加适合JavaScript的 对象关联&#x2F;行为委托 设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对比2种设计模式"><span class="nav-number">2.0.4.</span> <span class="nav-text">对比2种设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链终点问题"><span class="nav-number">2.0.5.</span> <span class="nav-text">原型链终点问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如果对于文中的new、call-apply原理、Oeject-create-不太了解请移步JavaScript备忘录文章，其中有记录。"><span class="nav-number">2.0.5.1.</span> <span class="nav-text">如果对于文中的new、call&#x2F;apply原理、Oeject.create()不太了解请移步JavaScript备忘录文章，其中有记录。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.0.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiognwei Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
