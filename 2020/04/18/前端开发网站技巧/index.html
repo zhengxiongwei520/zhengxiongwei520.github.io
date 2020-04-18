@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="手机端," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机端MOBA网站开发总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;18&#x2F;%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%BD%91%E7%AB%99%E6%8A%80%E5%B7%A7&#x2F;index.html">
+<meta property="og:site_name" content="CodeZheng">
+<meta property="og:description" content="自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路。">
+<meta property="article:published_time" content="2020-04-18T14:13:20.589Z">
+<meta property="article:modified_time" content="2020-04-16T17:36:05.210Z">
+<meta property="article:author" content="Xiognwei Zheng">
+<meta property="article:tag" content="手机端">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/18/前端开发网站技巧/"/>
+
+
+
+
+
+  <title>手机端MOBA网站开发总结 | CodeZheng</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CodeZheng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%BD%91%E7%AB%99%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiognwei Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/zxw_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeZheng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">手机端MOBA网站开发总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-18T22:13:20+08:00">
+                2020-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。"><a href="#使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。" class="headerlink" title="使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。"></a>使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。</h4><p>之所以用SCSS，是因为SCSS的语法写嵌套非常舒服，一目了然。</p>
+<p><code>npm i -D sass sass-loader</code>安装scss</p>
+<h4 id="样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。"><a href="#样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。" class="headerlink" title="样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。"></a>样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;  <span class="comment">// </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">13px</span>; <span class="comment">// 一般设置尺寸都是用rem，rem的默认值就是html的字体大小</span></span><br><span class="line">    <span class="comment">// 基础像素 rem为多少取决于这里</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-family</span>:Arial,Helvetica,sans-serif;  <span class="comment">//sans-serif 非衬线字体</span></span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">1.2em</span>;</span><br><span class="line">    <span class="attribute">background</span>:<span class="number">#f1f1f1</span>;   <span class="comment">// 网站通用背景颜色</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="网站色彩和字体定义"><a href="#网站色彩和字体定义" class="headerlink" title="网站色彩和字体定义"></a>网站色彩和字体定义</h4><p>网站并不是看到哪写到哪，可以提前设置一些常用的颜色以及字体。</p>
+<p>scss样式可以使用变量！！</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义成变量</span></span><br><span class="line"><span class="variable">$colors</span>: (<span class="string">"primary"</span>: <span class="number">#db9e3f</span>,</span><br><span class="line">  <span class="string">"white"</span>:<span class="number">#fff</span>,</span><br><span class="line">  <span class="string">"light"</span>:<span class="number">#f9f9f9</span>,</span><br><span class="line">  <span class="string">"grey"</span>:<span class="number">#999</span>,</span><br><span class="line">  <span class="string">"dark-1"</span>:<span class="number">#343440</span>,</span><br><span class="line">  <span class="string">"dark"</span>:<span class="number">#222</span>,</span><br><span class="line">  <span class="string">"black"</span>: <span class="number">#000</span>);</span><br><span class="line">  <span class="comment">// 后续可以自己添加需要的颜色</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$colorKey</span>, <span class="variable">$colorVal</span> in <span class="variable">$colors</span> &#123;</span><br><span class="line">  <span class="selector-class">.text-</span>#&#123;<span class="variable">$colorKey</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$colorVal</span></span><br><span class="line">  &#125;</span><br><span class="line">  .bg-#&#123;<span class="variable">$colorKey</span>&#125; &#123;</span><br><span class="line">    background-color: $&#123;<span class="variable">$colorVal</span>&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文本对齐方式</span></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$var</span> in (left, center, right) &#123;</span><br><span class="line">  <span class="selector-class">.text-</span>#&#123;<span class="variable">$var</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: <span class="variable">$var</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这样就可以生成如下的样式</span></span><br><span class="line"><span class="selector-class">.text-left</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.text-center</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.text-right</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这2个是SCSS常用的方法，一定要熟练使用。后续还有其他字体大小 边距都是用这种方法实现的，就不贴上来了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">px换算rem使用插件&#96;px to rem</span><br><span class="line"></span><br><span class="line">px torem插件使用alt+s可以设置默认rem值，alt+z转换</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h4><p>flex布局/几乎所有手机都支持/频繁使用，所以flex定义很重要</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.d-flex</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.flex-column</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="variable">$flex-jc</span>:(</span><br><span class="line">    <span class="string">"start"</span>:flex-start,</span><br><span class="line">  <span class="string">"end"</span>:flex-end,</span><br><span class="line">  <span class="string">"center"</span>:center,</span><br><span class="line">  <span class="string">"between"</span>:space-between,</span><br><span class="line">  <span class="string">"around"</span>:space-around</span><br><span class="line">);</span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$Key</span>, <span class="variable">$Val</span> in <span class="variable">$flex-jc</span> &#123;</span><br><span class="line">  <span class="selector-class">.jc-</span>#&#123;<span class="variable">$Key</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: <span class="variable">$Val</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="variable">$flex-ai</span>:(</span><br><span class="line">    <span class="string">"start"</span>:flex-start,</span><br><span class="line">  <span class="string">"end"</span>:flex-end,</span><br><span class="line">  <span class="string">"center"</span>:center,</span><br><span class="line">  <span class="string">"stretch"</span>:stretch</span><br><span class="line">);</span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$Key</span>, <span class="variable">$Val</span> in <span class="variable">$flex-ai</span> &#123;</span><br><span class="line">  <span class="selector-class">.ai-</span>#&#123;<span class="variable">$Key</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">align-items</span>: <span class="variable">$Val</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.flex-1</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.flex-grow-1</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  flex-grow: 1;默认把自己拉伸，比如左边是100px的块，那他会自己填满剩余的空间。</p>
+<p><code>.item {flex: 2333 3222 234px;}  等同于  .item{flex-grow:1; flex-shrink:3222; flex-basis:234px;}</code></p>
+<p>jutify-content是主轴排序方式，flex的方向是水平的，主轴就是水平方向。flex垂直，主轴就是垂直。</p>
+<p>align-items是副轴排序方式，flex的方向是水平的，副轴就是垂直方向。flex水平，主轴就是水平。</p>
+<h4 id="常用边距"><a href="#常用边距" class="headerlink" title="常用边距"></a>常用边距</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 边距  spacing</span></span><br><span class="line"><span class="variable">$spacing-types</span>:(<span class="string">"m"</span>:margin, <span class="string">"p"</span>:padding);</span><br><span class="line"><span class="variable">$spacing-directions</span>:(t:top, r:right, b:bottom, l:left);</span><br><span class="line"><span class="variable">$spacing-base-size</span>:<span class="number">1rem</span>;</span><br><span class="line"><span class="variable">$spacing-sizes</span>:(<span class="number">0</span>:<span class="number">0</span>, <span class="number">1</span>:<span class="number">0.25</span>, <span class="number">2</span>:<span class="number">0.5</span>, <span class="number">3</span>:<span class="number">1</span>, <span class="number">4</span>:<span class="number">1.5</span>, <span class="number">5</span>:<span class="number">3</span>);</span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$typeKey</span>, <span class="variable">$typeVal</span> in <span class="variable">$spacing-types</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// .m-1</span></span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$sizeKey</span>, <span class="variable">$sizeVal</span> in <span class="variable">$spacing-sizes</span> &#123;</span><br><span class="line">    .#&#123;<span class="variable">$typeKey</span>&#125;-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// .mx-1 .my-1</span></span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$sizeKey</span>, <span class="variable">$sizeVal</span> in <span class="variable">$spacing-sizes</span> &#123;</span><br><span class="line">    .#&#123;<span class="variable">$typeKey</span>&#125;x-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">left</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">right</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ;</span><br><span class="line">    .#&#123;<span class="variable">$typeKey</span>&#125;y-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">top</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">bottom</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// .mt-1</span></span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$direKey</span>, <span class="variable">$direVal</span> in <span class="variable">$spacing-directions</span> &#123;</span><br><span class="line">    <span class="keyword">@each</span> <span class="variable">$sizeKey</span>, <span class="variable">$sizeVal</span> in <span class="variable">$spacing-sizes</span> &#123;</span><br><span class="line">      .#&#123;<span class="variable">$typeKey</span>&#125;#&#123;<span class="variable">$direKey</span>&#125;-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">        #&#123;<span class="variable">$typeVal</span>&#125;-#&#123;<span class="variable">$direVal</span>&#125;: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<h4 id="将scss中的样式变量分开"><a href="#将scss中的样式变量分开" class="headerlink" title="将scss中的样式变量分开"></a>将scss中的样式变量分开</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// _varialbes.scss</span></span><br><span class="line"><span class="comment">// 颜色</span></span><br><span class="line"><span class="variable">$colors</span>: (<span class="string">"primary"</span>: <span class="number">#db9e3f</span>,</span><br><span class="line">  <span class="string">"info"</span>:<span class="number">#4b67af</span>,</span><br><span class="line">  <span class="string">"white"</span>:<span class="number">#fff</span>,</span><br><span class="line">  <span class="string">"light"</span>:<span class="number">#f9f9f9</span>,</span><br><span class="line">  <span class="string">"grey"</span>:<span class="number">#999</span>,</span><br><span class="line">  <span class="string">"grey-1"</span>:<span class="number">#666</span>,</span><br><span class="line">  <span class="string">"dark-1"</span>:<span class="number">#343440</span>,</span><br><span class="line">  <span class="string">"dark"</span>:<span class="number">#222</span>,</span><br><span class="line">  <span class="string">"black"</span>: <span class="number">#000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本</span></span><br><span class="line"><span class="comment">// font-size </span></span><br><span class="line"><span class="variable">$base-font-size</span>:<span class="number">1rem</span>;</span><br><span class="line"><span class="variable">$font-sizes</span>:(xxs:<span class="number">0.6154</span>, // <span class="number">8px</span></span><br><span class="line">  xs:<span class="number">0.7692</span>, // <span class="number">10px</span></span><br><span class="line">  sm:<span class="number">0.9231</span>, // <span class="number">12px</span></span><br><span class="line">  md:<span class="number">1</span>, // <span class="number">13px</span></span><br><span class="line">  lg:<span class="number">1.0769</span>, // <span class="number">14px</span></span><br><span class="line">  xl:<span class="number">1.2308</span> // <span class="number">16px</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// flex布局</span></span><br><span class="line"><span class="variable">$flex-jc</span>:(<span class="string">"start"</span>:flex-start,</span><br><span class="line">  <span class="string">"end"</span>:flex-end,</span><br><span class="line">  <span class="string">"center"</span>:center,</span><br><span class="line">  <span class="string">"between"</span>:space-between,</span><br><span class="line">  <span class="string">"around"</span>:space-around);</span><br><span class="line"></span><br><span class="line"><span class="variable">$flex-ai</span>:(<span class="string">"start"</span>:flex-start,</span><br><span class="line">  <span class="string">"end"</span>:flex-end,</span><br><span class="line">  <span class="string">"center"</span>:center,</span><br><span class="line">  <span class="string">"stretch"</span>:stretch);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 边距  spacing</span></span><br><span class="line"><span class="variable">$spacing-types</span>:(<span class="string">"m"</span>:margin, <span class="string">"p"</span>:padding);</span><br><span class="line"><span class="variable">$spacing-directions</span>:(t:top, r:right, b:bottom, l:left);</span><br><span class="line"><span class="variable">$spacing-base-size</span>:<span class="number">1rem</span>;</span><br><span class="line"><span class="variable">$spacing-sizes</span>:(<span class="number">0</span>:<span class="number">0</span>, <span class="number">1</span>:<span class="number">0.25</span>, <span class="number">2</span>:<span class="number">0.5</span>, <span class="number">3</span>:<span class="number">1</span>, <span class="number">4</span>:<span class="number">1.5</span>, <span class="number">5</span>:<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<p>将scss中运用到的变量拿出来写在_variables.scss中，这个文件被引用的时名字不需要添加下划线。</p>
+<p><code>@import &#39;./variables&#39;</code>文件名前面有下划线表示被包含文件，被引用时不用下划线。</p>
+<p>把变量分开的原因是有些时候页面需要引入已经设置好的样式，如果不分开，引入的文件就太大了。把变量分开，需要用到时引入变量文件，然后通过map-get()来获取样式</p>
+<p><code>background-color: map-get($colors, &quot;info&quot;);</code> </p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">'./variables'</span>;</span><br><span class="line"><span class="comment">// 颜色</span></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$colorKey</span>, <span class="variable">$colorVal</span> in <span class="variable">$colors</span> &#123;</span><br><span class="line">  <span class="selector-class">.text-</span>#&#123;<span class="variable">$colorKey</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$colorVal</span></span><br><span class="line">  &#125;</span><br><span class="line">  .bg-#&#123;<span class="variable">$colorKey</span>&#125; &#123;</span><br><span class="line">    background-color: <span class="variable">$colorVal</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本</span></span><br><span class="line"><span class="comment">// text-align0</span></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$var</span> in (left, center, right) &#123;</span><br><span class="line">  <span class="selector-class">.text-</span>#&#123;<span class="variable">$var</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: <span class="variable">$var</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// font-size </span></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$fzKey</span>, <span class="variable">$fzVal</span> in <span class="variable">$font-sizes</span> &#123;</span><br><span class="line">  <span class="selector-class">.fz-</span>#&#123;<span class="variable">$fzKey</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$fzVal</span> * <span class="variable">$base-font-size</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="comment">// width height</span></span><br><span class="line"><span class="selector-class">.w-100</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.h-100</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// flex布局</span></span><br><span class="line"><span class="selector-class">.d-flex</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.flex-column</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$Key</span>, <span class="variable">$Val</span> in <span class="variable">$flex-jc</span> &#123;</span><br><span class="line">  <span class="selector-class">.jc-</span>#&#123;<span class="variable">$Key</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: <span class="variable">$Val</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$Key</span>, <span class="variable">$Val</span> in <span class="variable">$flex-ai</span> &#123;</span><br><span class="line">  <span class="selector-class">.ai-</span>#&#123;<span class="variable">$Key</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">align-items</span>: <span class="variable">$Val</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.flex-1</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"><span class="selector-class">.flex-grow-1</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 边距  spacing</span></span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$typeKey</span>, <span class="variable">$typeVal</span> in <span class="variable">$spacing-types</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// .m-1</span></span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$sizeKey</span>, <span class="variable">$sizeVal</span> in <span class="variable">$spacing-sizes</span> &#123;</span><br><span class="line">    .#&#123;<span class="variable">$typeKey</span>&#125;-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// .mx-1 .my-1</span></span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$sizeKey</span>, <span class="variable">$sizeVal</span> in <span class="variable">$spacing-sizes</span> &#123;</span><br><span class="line">    .#&#123;<span class="variable">$typeKey</span>&#125;x-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">left</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">right</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ;</span><br><span class="line">    .#&#123;<span class="variable">$typeKey</span>&#125;y-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">top</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">      #&#123;<span class="variable">$typeVal</span>&#125;-<span class="attribute">bottom</span>: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// .mt-1</span></span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$direKey</span>, <span class="variable">$direVal</span> in <span class="variable">$spacing-directions</span> &#123;</span><br><span class="line">    <span class="keyword">@each</span> <span class="variable">$sizeKey</span>, <span class="variable">$sizeVal</span> in <span class="variable">$spacing-sizes</span> &#123;</span><br><span class="line">      .#&#123;<span class="variable">$typeKey</span>&#125;#&#123;<span class="variable">$direKey</span>&#125;-#&#123;<span class="variable">$sizeKey</span>&#125; &#123;</span><br><span class="line">        #&#123;<span class="variable">$typeVal</span>&#125;-#&#123;<span class="variable">$direVal</span>&#125;: <span class="variable">$sizeVal</span>* <span class="variable">$spacing-base-size</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<h4 id="native状态有下划线"><a href="#native状态有下划线" class="headerlink" title="native状态有下划线"></a>native状态有下划线</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.nav</span> &#123;</span><br><span class="line">  <span class="selector-class">.nav-item</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">3px</span> solid transparent;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0.2rem</span>;</span><br><span class="line">    &amp;<span class="selector-class">.active</span> &#123;</span><br><span class="line">      <span class="comment">// &amp; 表示他本身</span></span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">3px</span> solid <span class="number">#fff</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就native的类名拥有下划线</p>
+<h4 id="精灵图片"><a href="#精灵图片" class="headerlink" title="精灵图片"></a>精灵图片</h4><p><a href="http://www.spritecow.com" target="_blank" rel="noopener">www.spritecow.com</a> 可以自动获取精灵图片位置</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sprite</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: url(<span class="string">'../images/index.png'</span>) no-repeat <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">28.8462rem</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  &amp;<span class="selector-class">.sprite-news</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">63.546%</span> <span class="number">15.517%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">3.4615rem</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">3.0769rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-class">.sprite-arrow</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">38.577%</span> <span class="number">52.076%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">19px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">19px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h4><p>可以随意大小，颜色，也自定义添加样式。</p>
+<p>字体图标一般用—–阿里巴巴矢量图标库   <a href="http://www.iconfont.cn" target="_blank" rel="noopener">www.iconfont.cn</a></p>
+<h4 id="封装card组件"><a href="#封装card组件" class="headerlink" title="封装card组件"></a>封装card组件</h4><p>很简单的一个组件，就不多说了，要注意的事，里面所使用的样式类名都是全局的，如果要单独拿去别的项目使用 ，记得把样式也拿走。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;card mt-3 bg-white p-3&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;card-header d-flex pb-3&quot;&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;iconfont icon-xinwen&quot; v-if&#x3D;&quot;icon&quot; :class&#x3D;&quot;icon&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;flex-1 ml-2&quot;&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;iconfont icon-gengduo&quot; v-if&#x3D;&quot;moreFlag&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;card-body&quot;&gt;</span><br><span class="line">      &lt;slot&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: &#123; type: String, required: true &#125;,</span><br><span class="line">    icon: &#123; type: String &#125;,</span><br><span class="line">    moreFlag: &#123; type: Boolean, default: true &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot;&gt;</span><br><span class="line">@import &quot;..&#x2F;assets&#x2F;scss&#x2F;_variables.scss&quot;;</span><br><span class="line">.card-header &#123;</span><br><span class="line">  border-bottom: 1px solid $border-color;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="封装ListCard组件"><a href="#封装ListCard组件" class="headerlink" title="封装ListCard组件"></a>封装ListCard组件</h4><p>具名插槽的使用很关键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;card mt-3 bg-white p-3&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;card-header d-flex pb-3&quot;&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;iconfont icon-xinwen&quot; v-if&#x3D;&quot;icon&quot; :class&#x3D;&quot;icon&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;flex-1 ml-2&quot;&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">      &lt;span class&#x3D;&quot;iconfont icon-gengduo&quot; v-if&#x3D;&quot;moreFlag&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;!--  以上部分是卡片的头部，跟Card组件一样，重点是身体部分，要实现的是：</span><br><span class="line">			分类1 分类2 分类3 分类4</span><br><span class="line">			slot-------swiper</span><br><span class="line">			不同分类页下可以自己定义</span><br><span class="line">		--&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;card-body&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;nav d-flex p-3 jc-between fz-sm&quot;&gt;</span><br><span class="line">        &lt;div</span><br><span class="line">          class&#x3D;&quot;nav-item&quot;</span><br><span class="line">          :class&#x3D;&quot;&#123;active: active &#x3D;&#x3D;&#x3D; i &#125;&quot;</span><br><span class="line">          v-for&#x3D;&quot;(cate,i) in cates&quot;</span><br><span class="line">          :key&#x3D;&quot;i&quot;</span><br><span class="line">          @click&#x3D;&quot;active &#x3D; i&quot;</span><br><span class="line">        &gt;</span><br><span class="line">          &lt;div class&#x3D;&quot;nav-link active&quot;&gt;&#123;&#123;cate.name&#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;pt-3&quot;&gt;</span><br><span class="line">        &lt;swiper&gt;</span><br><span class="line">          &lt;swiper-slide v-for&#x3D;&quot;(cate,i) in cates&quot; :key&#x3D;&quot;i&quot;&gt;</span><br><span class="line">            &lt;slot name&#x3D;&quot;items&quot; :cate&#x3D;&quot;cate&quot;&gt;&lt;&#x2F;slot&gt;  </span><br><span class="line">             &lt;!-- 具名插槽，父组件可以--&gt;</span><br><span class="line">          &lt;&#x2F;swiper-slide&gt;</span><br><span class="line">        &lt;&#x2F;swiper&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: &#123; type: String, required: true &#125;,</span><br><span class="line">    icon: &#123; type: String &#125;,</span><br><span class="line">    moreFlag: &#123; type: Boolean, default: true &#125;,</span><br><span class="line">    cates: &#123; type: Array, required: true &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      active: 0</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot;&gt;</span><br><span class="line">@import &quot;..&#x2F;assets&#x2F;scss&#x2F;_variables.scss&quot;;</span><br><span class="line">.card-header &#123;</span><br><span class="line">  border-bottom: 1px solid $border-color;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-list-card title&#x3D;&quot;zzz&quot; :cates&#x3D;&quot;cates&quot; icon&#x3D;&quot;caidan&quot;&gt;</span><br><span class="line">    &lt;template #items&#x3D;&quot;&#123;cate&#125;&quot;&gt;</span><br><span class="line">    	&lt;div class&#x3D;&quot;fz-sm pb-2&quot; v-for&#x3D;&quot;(item,i) in cate.cateList&quot; :key&#x3D;&quot;i&quot;&gt;</span><br><span class="line">            &lt;span&gt;[&#123;&#123;item.name&#125;&#125;]&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;span&gt;|&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;span&gt;&#123;&#123;item.title&#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;span&gt;&#123;&#123;item.time&#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;template&gt;</span><br><span class="line">&lt;&#x2F;my-list-card&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 传进去的数据格式如下</span><br><span class="line">cates: [</span><br><span class="line">        &#123;</span><br><span class="line">          name: &quot;新闻1&quot;,</span><br><span class="line">          cateList: [</span><br><span class="line">            &#123; name: &quot;公告&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告2&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告3&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告4&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告5&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: &quot;新闻2&quot;,</span><br><span class="line">          cateList: [</span><br><span class="line">            &#123; name: &quot;公告&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告22&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告33&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告4&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;,</span><br><span class="line">            &#123; name: &quot;公告5&quot;, title: &quot;标题XXXXXX&quot;, time: &quot;06.02&quot; &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br></pre></td></tr></table></figure>
+
+<h4 id="如果通过不同方式访问一个页面数据不刷新，记得给router-view加key"><a href="#如果通过不同方式访问一个页面数据不刷新，记得给router-view加key" class="headerlink" title="如果通过不同方式访问一个页面数据不刷新，记得给router-view加key"></a>如果通过不同方式访问一个页面数据不刷新，记得给router-view加key</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view class&#x3D;&quot;routerView&quot; :key&#x3D;&quot;$route.path&quot;&gt;&lt;&#x2F;router-view&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="最新吸顶效果"><a href="#最新吸顶效果" class="headerlink" title="最新吸顶效果"></a>最新吸顶效果</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.topbar</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>:sticky;</span><br><span class="line">	<span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">	<span class="attribute">z-index</span>:<span class="number">999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="console台一些操作"><a href="#console台一些操作" class="headerlink" title="console台一些操作"></a>console台一些操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$(&#39;.news_list .title&#39;) &#x2F;&#x2F; 可以获取当前页面的数据</span><br><span class="line">$$(&#39;.news_lit .title&#39;).map(el &#x3D;&gt; el.innerTHML)  &#x2F;&#x2F; 获取HTML内容</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/images/wechat-qcode.jpg" alt="Xiognwei Zheng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%89%8B%E6%9C%BA%E7%AB%AF/" rel="tag"># 手机端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/26/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%AE%9E%E7%8E%B0token/" rel="next" title="Vue实现用户登录以及token验证">
+                <i class="fa fa-chevron-left"></i> Vue实现用户登录以及token验证
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/zxw_avatar.jpg"
+                alt="Xiognwei Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Xiognwei Zheng</p>
+              <p class="site-description motion-element" itemprop="description">不朽与不变，那是故事片段。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengxiongwei520" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhengxiongwei0502@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。"><span class="nav-number">1.</span> <span class="nav-text">使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。"><span class="nav-number">2.</span> <span class="nav-text">样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站色彩和字体定义"><span class="nav-number">3.</span> <span class="nav-text">网站色彩和字体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex布局"><span class="nav-number">4.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用边距"><span class="nav-number">5.</span> <span class="nav-text">常用边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将scss中的样式变量分开"><span class="nav-number">6.</span> <span class="nav-text">将scss中的样式变量分开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#native状态有下划线"><span class="nav-number">7.</span> <span class="nav-text">native状态有下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#精灵图片"><span class="nav-number">8.</span> <span class="nav-text">精灵图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体图标"><span class="nav-number">9.</span> <span class="nav-text">字体图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装card组件"><span class="nav-number">10.</span> <span class="nav-text">封装card组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装ListCard组件"><span class="nav-number">11.</span> <span class="nav-text">封装ListCard组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果通过不同方式访问一个页面数据不刷新，记得给router-view加key"><span class="nav-number">12.</span> <span class="nav-text">如果通过不同方式访问一个页面数据不刷新，记得给router-view加key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最新吸顶效果"><span class="nav-number">13.</span> <span class="nav-text">最新吸顶效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#console台一些操作"><span class="nav-number">14.</span> <span class="nav-text">console台一些操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiognwei Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

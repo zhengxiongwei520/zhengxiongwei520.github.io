@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="作用域,闭包,作用域链,执行环境,变量对象," />
+  <meta name="keywords" content="作用域,执行环境,闭包,作用域链,变量对象," />
 
 
 
@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="CodeZheng">
 <meta property="og:description" content="作用域、闭包">
 <meta property="article:published_time" content="2019-12-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-12-31T21:35:55.214Z">
+<meta property="article:modified_time" content="2020-04-14T02:31:02.473Z">
 <meta property="article:author" content="Xiognwei Zheng">
 <meta property="article:tag" content="作用域">
+<meta property="article:tag" content="执行环境">
 <meta property="article:tag" content="闭包">
 <meta property="article:tag" content="作用域链">
-<meta property="article:tag" content="执行环境">
 <meta property="article:tag" content="变量对象">
 <meta name="twitter:card" content="summary">
 
@@ -374,7 +374,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">词法阶段介绍：</span><br><span class="line">	大部分标准语言编译器的第一个工作阶段是分词&#x2F;词法分析（Tokenizing&#x2F;Lexing）</span><br><span class="line">	该阶段会把由字符组成的字符串分解成对编程语言由意义的代码块。例如：var a &#x3D; 2;</span><br><span class="line">	这段程序通常会被分解成下面这些词法单元（token）：var、a、&#x3D;、2、;。</span><br></pre></td></tr></table></figure>
 
 <h6 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h6><p>​    全局作用域中包含的变量（标识符）可以在任何地方都可以被访问到。</p>
-<h4 id="作用域链（scope-chain）"><a href="#作用域链（scope-chain）" class="headerlink" title="作用域链（scope chain）"></a>作用域链（scope chain）</h4><p>​    当作用域嵌套时，引擎从当前执行作用域开始查找变量，如果找不到，就往上一级（）继续查找，直到抵达最外层的全局作用域，无论是否找到，查找过程都会停止。</p>
+<h4 id="作用域链（scope-chain）"><a href="#作用域链（scope-chain）" class="headerlink" title="作用域链（scope chain）"></a>作用域链（scope chain）</h4><p>​    当作用域嵌套时，引擎从当前执行作用域开始查找变量，如果找不到，就往上一级继续查找，直到抵达最外层的全局作用域，无论是否找到，查找过程都会停止。</p>
 <h4 id="作用域嵌套例子"><a href="#作用域嵌套例子" class="headerlink" title="作用域嵌套例子"></a>作用域嵌套例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = a * <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a, b, c);</span><br><span class="line">    &#125;</span><br><span class="line">    bar(b * <span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">2</span>); <span class="comment">// 2, 4, 12</span></span><br></pre></td></tr></table></figure>
 
 <p>​    这个例子中有3个逐级嵌套的作用域，为了方便理解可以想象成几个逐级包含的“气泡”。</p>
@@ -461,11 +461,11 @@
           
             <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" rel="tag"># 作用域</a>
           
+            <a href="/tags/%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83/" rel="tag"># 执行环境</a>
+          
             <a href="/tags/%E9%97%AD%E5%8C%85/" rel="tag"># 闭包</a>
           
             <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" rel="tag"># 作用域链</a>
-          
-            <a href="/tags/%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83/" rel="tag"># 执行环境</a>
           
             <a href="/tags/%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/" rel="tag"># 变量对象</a>
           
@@ -573,7 +573,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +584,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -595,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
