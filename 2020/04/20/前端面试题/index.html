@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="总结的前端面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;20&#x2F;%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98&#x2F;index.html">
+<meta property="og:site_name" content="CodeZheng">
+<meta property="og:description" content="总结的前端面试题">
+<meta property="article:published_time" content="2020-04-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-20T12:35:19.814Z">
+<meta property="article:author" content="Xiognwei Zheng">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/20/前端面试题/"/>
+
+
+
+
+
+  <title>前端面试题 | CodeZheng</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CodeZheng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiognwei Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/zxw_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeZheng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-20T00:00:00+08:00">
+                2020-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  总结的前端面试题
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML/CSS"></a>HTML/CSS</h1><h2 id="移动端适配相关"><a href="#移动端适配相关" class="headerlink" title="移动端适配相关"></a>移动端适配相关</h2><p>iphone6分辨率是750*1334，750是他的物理像素，375是逻辑像素，像素比是 物理像素/逻辑像素 所以等于2。</p>
+<p>css中的width对应的其实是逻辑像素，比如说写个 width:375px; 就可以铺满iph6。</p>
+<p>但是每个手机像素不一样，如果固定设置375px，它在300像素的手机上就会出现滚动条，所以需要通过rem动态设置。</p>
+<p>目前移动端的设计图都是按照375逻辑像素的ip6来设计的，但是为了展示更细节的东西，用的是750的psd图。</p>
+<p>REM就html元素的font-size。HTML元素的font-size:16px; 1rem=16px;</p>
+<h3 id="方案一：JS配合修改配合rem适配"><a href="#方案一：JS配合修改配合rem适配" class="headerlink" title="方案一：JS配合修改配合rem适配"></a>方案一：JS配合修改配合rem适配</h3><p>屏幕宽度与设计稿宽度相同时(scale为1)设置根元素字体大小为100px，那么接下来只需要考虑其他屏幕宽度/设计稿宽度的比例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> designWidth = <span class="number">375</span>;  		<span class="comment">// 设计稿宽度</span></span><br><span class="line"><span class="keyword">var</span> remPx = <span class="number">100</span>;               <span class="comment">// 在屏幕宽度375px，的时候，设置根元素字体大小 100px</span></span><br><span class="line"><span class="keyword">var</span> scale = <span class="built_in">window</span>.innerWidth / designWidth； <span class="comment">//计算当前屏幕的宽度与设计稿比例</span></span><br><span class="line"><span class="comment">// 根据屏幕宽度 动态计算根元素的 字体大小</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.style.fontSize = scale*remPx + <span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方案二："><a href="#方案二：" class="headerlink" title="方案二："></a>方案二：</h3><p>将rem设置为当前屏幕宽度的16分之一。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算屏幕宽度</span></span><br><span class="line"><span class="keyword">var</span> screen = <span class="built_in">document</span>.documentElement.clientWidth;</span><br><span class="line"><span class="comment">// 计算字体大小，取屏幕宽度的16分之一</span></span><br><span class="line"><span class="keyword">var</span> size = screen / <span class="number">16</span>;</span><br><span class="line"><span class="comment">// 设置根元素字体大小</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.style.fontSize = size + <span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>你也可以改成n分之一，无所谓的。</p>
+<h3 id="怎么实现1rem表示为50px？"><a href="#怎么实现1rem表示为50px？" class="headerlink" title="怎么实现1rem表示为50px？"></a>怎么实现1rem表示为50px？</h3><p>设计稿宽度情况下rem为50px</p>
+<p>其他宽度：</p>
+<p>​    屏幕宽度/设计稿宽度 * 50</p>
+<hr>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="数组中的push-pop-unshift-shift用法"><a href="#数组中的push-pop-unshift-shift用法" class="headerlink" title="数组中的push pop unshift shift用法"></a>数组中的push pop unshift shift用法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">arr.push(<span class="number">3</span>)  <span class="comment">// [0, 1, 2, 3] 给数组末尾添加属性</span></span><br><span class="line">arr.pop()   <span class="comment">//  [0, 1, 2] 删除数组末尾属性</span></span><br><span class="line">arr.unshift(<span class="number">-1</span>) <span class="comment">//  [-1, 0, 1, 2] 给数组头部添加属性</span></span><br><span class="line">arr.shift() <span class="comment">// [0, 1, 2] 删除数组头部属性</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 而且这四个方法都改变了数组自身。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript中改变this指向的方法-call-apply-bind的用法与区别"><a href="#JavaScript中改变this指向的方法-call-apply-bind的用法与区别" class="headerlink" title="JavaScript中改变this指向的方法/call apply bind的用法与区别"></a>JavaScript中改变this指向的方法/call apply bind的用法与区别</h2><p>改变this指向的方法有call apply bind这三种</p>
+<p>call apply bind这三个方法第一个参数都是 this 的指向对象。</p>
+<p>call的剩余参数都是一个一个放进去的</p>
+<p>apply的剩余参数以数组形式放进去</p>
+<p>bind跟call一样，只是它返回的是函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">b, c</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.a, b, c)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">	a:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">	a:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj3 = &#123;</span><br><span class="line">    a:<span class="number">4</span></span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>,<span class="number">1</span>)  <span class="comment">// this指向window 输出 1,1,1</span></span><br><span class="line">foo.call(obj1, <span class="number">2</span>, <span class="number">2</span>)  <span class="comment">// this指向obj1 输出 2,2,2</span></span><br><span class="line">foo.apply(obj2, [<span class="number">3</span>, <span class="number">3</span>])  <span class="comment">// this指向obj2 输出 3,3,3</span></span><br><span class="line">foo.bind(obj3, <span class="number">4</span>, <span class="number">4</span>)() <span class="comment">// this指向obj3，返回的是函数，其他都和call一样 输出 4, 4, 4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原生实现bind（bind-ES5才出现的）"><a href="#原生实现bind（bind-ES5才出现的）" class="headerlink" title="原生实现bind（bind ES5才出现的）"></a>原生实现bind（bind ES5才出现的）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最简陋</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.bind1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice  <span class="comment">// arguments是伪数组，不能直接调用slice</span></span><br><span class="line">    <span class="keyword">var</span> thatFunc = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> thatArg = <span class="built_in">arguments</span>[<span class="number">0</span>] <span class="comment">// 获取第一个参数</span></span><br><span class="line">    <span class="keyword">var</span> args = slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>) <span class="comment">// 通过这种方法获取剩余参数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> funcArgs = args.concat(slice.call(<span class="built_in">arguments</span>)) <span class="comment">// 拼接返回出去的函数的参数</span></span><br><span class="line">        thatFunc.apply(thatArg, funcArgs) <span class="comment">// 通过apply改变this指向和传递参数数组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面这个有考虑各方面问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Function</span>.prototype.bind) (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 判断是否有bind </span></span><br><span class="line">  <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line">  <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> thatFunc = <span class="keyword">this</span>, thatArg = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> args = slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>); </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> thatFunc !== <span class="string">'function'</span>) &#123;  <span class="comment">// 判断是不是函数调用</span></span><br><span class="line">	  <span class="comment">// 抛出错误信息，绑定的内容不可调用</span></span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Function.prototype.bind - '</span> +</span><br><span class="line">             <span class="string">'what is trying to be bound is not callable'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> funcArgs = args.concat(slice.call(<span class="built_in">arguments</span>))  </span><br><span class="line">      <span class="keyword">return</span> thatFunc.apply(thatArg, funcArgs);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();  <span class="comment">// 将函数包裹起来防止向外泄露 (fn)()</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原生实现call"><a href="#原生实现call" class="headerlink" title="原生实现call"></a>原生实现call</h3><p>apply区别就是传入的是数组，就不另外写了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call2=<span class="function"><span class="keyword">function</span>(<span class="params">context,...args</span>)</span>&#123;</span><br><span class="line">    context=context||<span class="built_in">window</span>; <span class="comment">// 获取执行环境</span></span><br><span class="line">    context.fn=<span class="keyword">this</span>; <span class="comment">// 获取原函数</span></span><br><span class="line">    <span class="keyword">const</span> result = context.fn(...args);  <span class="comment">// 将fn添加参数赋值给result</span></span><br><span class="line">    <span class="keyword">delete</span>    context.fn; <span class="comment">// 删除执行环境中的fn</span></span><br><span class="line">    <span class="keyword">return</span>    result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'a'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a, name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Bar = &#123;</span><br><span class="line">    a:<span class="string">'aaa'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Foo.call2(Bar, <span class="string">'bar'</span>) <span class="comment">// aaa bar</span></span><br></pre></td></tr></table></figure>
+
+<p>说白了就是给执行环境添加一个fn方法，fn方法为原函数并且传入其余参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大概等于以下操作</span></span><br><span class="line"><span class="keyword">var</span> Bar = &#123;</span><br><span class="line">    a:<span class="string">'aaa'</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span> (<span class="params">name</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(name)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Bar.fn(<span class="string">'bar'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则表达式相关-RegExp"><a href="#正则表达式相关-RegExp" class="headerlink" title="正则表达式相关 RegExp"></a>正则表达式相关 RegExp</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> re = <span class="regexp">/\d/g</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'123123dasd123asd12zzz'</span></span><br><span class="line">str.match(re)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myRe = <span class="regexp">/d(b+)d/g</span>;</span><br><span class="line"><span class="keyword">var</span> myArray = myRe.exec(<span class="string">"cdbbdbsbz"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<hr>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="为什么使用vue、为什么使用vue组件"><a href="#为什么使用vue、为什么使用vue组件" class="headerlink" title="为什么使用vue、为什么使用vue组件"></a>为什么使用vue、为什么使用vue组件</h2><p>vue优势：</p>
+<ol>
+<li>实现数据与结构的分离（MVVM模式）</li>
+<li>单页应用程序 SPA</li>
+<li>组件化开发</li>
+<li>响应式的数据绑定</li>
+<li>虚拟DOM 几乎不用自己操作DOM 也不推荐</li>
+</ol>
+<p>vue组件：组件可以拓展HTML元素，封装复用代码，可以理解为自定义的HTML元素</p>
+<ol>
+<li>提高开发效率</li>
+<li>方便重复使用</li>
+<li>提高维护性</li>
+<li>便于多人协同开发</li>
+</ol>
+<h2 id="v-if-v-show区别"><a href="#v-if-v-show区别" class="headerlink" title="v-if v-show区别"></a>v-if v-show区别</h2><p>v-show改变的是元素的display，不管true或者false他都会被渲染。</p>
+<p>v-if只有为true的时候才会进行渲染，它是惰性的。</p>
+<p>频繁切换的元素使用v-show，很少切换改变的使用v-if</p>
+<h2 id="双向数据绑定使用什么？它的原理是什么？"><a href="#双向数据绑定使用什么？它的原理是什么？" class="headerlink" title="双向数据绑定使用什么？它的原理是什么？"></a>双向数据绑定使用什么？它的原理是什么？</h2><p>表单的双向数据绑定使用v-model。</p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>​    实现主要需要考虑2个方面，数据变化-》视图更新，视图变化-》数据更新。</p>
+<p>view视图数据更新通过事件监听即可，比如input标签监听‘input’事件就可以实现了。</p>
+<p>当数据发生变化时就要用到Object.defineProperty，给他设置一个set函数，数据变化时就会触发这个函数，这时候我们只需要把更新view的方法放在这里就可以。</p>
+<h4 id="view视图数据变化更新data"><a href="#view视图数据变化更新data" class="headerlink" title="view视图数据变化更新data"></a>view视图数据变化更新data</h4><p>就相当于给input绑定一个input事件，input发生变化时修改data的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input :value&#x3D;&quot;someting&quot; @input&#x3D;&quot;something &#x3D; $event.target.value&quot;&gt;</span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">	something:&#39;&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="data属性发生变化后更新view："><a href="#data属性发生变化后更新view：" class="headerlink" title="data属性发生变化后更新view："></a>data属性发生变化后更新view：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">	something:<span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(data, <span class="string">'something'</span>, &#123;</span><br><span class="line">    <span class="keyword">set</span>:function(value)&#123;</span><br><span class="line">        data[<span class="string">'something'</span>] = value</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue的计算属性、方法、侦听属性"><a href="#vue的计算属性、方法、侦听属性" class="headerlink" title="vue的计算属性、方法、侦听属性"></a>vue的计算属性、方法、侦听属性</h2><p>计算属性用来处理复杂逻辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">computed: &#123;</span><br><span class="line">    reversedMessage: function () &#123;</span><br><span class="line">        return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="计算属性VS方法"><a href="#计算属性VS方法" class="headerlink" title="计算属性VS方法"></a>计算属性VS方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Reversed message: &quot;&#123;&#123; reversedMessage() &#125;&#125;&quot;&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">  reversedMessage: function () &#123;</span><br><span class="line">    return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你会发现计算属性实现的使用方法也能实现，两者的区别是什么？</p>
+<p>不同的是<strong>计算属性是基于它们的响应式依赖进行缓存的</strong>。只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 <code>message</code> 还没有发生改变，多次访问 <code>reversedMessage</code> 计算属性会立即返回之前的计算结果，而不必再次执行函数。</p>
+<p>相比之下，每当触发重新渲染时，调用方法将<strong>总会</strong>再次执行函数。</p>
+<h4 id="计算属性VS侦听器（watch）"><a href="#计算属性VS侦听器（watch）" class="headerlink" title="计算属性VS侦听器（watch）"></a>计算属性VS侦听器（watch）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  &#x2F;&#x2F; 如果 &#96;question&#96; 发生改变，这个函数就会运行</span><br><span class="line">  question: function (newQuestion, oldQuestion) &#123;</span><br><span class="line">    this.answer &#x3D; &#39;Waiting for you to stop typing...&#39;</span><br><span class="line">    this.debouncedGetAnswer()</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>watch适合处理的场景是，侦听一个数的变化，当该数据变化，来处理其他与之相关数据的变化（该数据影响别的多个数据）<br>computed适合处理的场景是，获得一个值或者结果，该结果受其他的依赖的影响。（一个数据受多个数据影响）</p>
+<h2 id="虚拟DOM是什么"><a href="#虚拟DOM是什么" class="headerlink" title="虚拟DOM是什么"></a>虚拟DOM是什么</h2><p>virtual dom其实是以JavaScript对象作为基础的树，用对象属性来描述节点，它是对于真实DOM的抽象。它保存了被渲染之前包含的所有信息，并且可以通过js操作进行维护。</p>
+<p>优点：</p>
+<ol>
+<li>跨平台优势</li>
+<li>操作DOM慢，JS运行效率高，可以将虚拟DOM放在JS层，提高效率</li>
+<li>提升渲染性能</li>
+</ol>
+<h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><h2 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h2><h2 id="vue组件传值"><a href="#vue组件传值" class="headerlink" title="vue组件传值"></a>vue组件传值</h2><h3 id="父—》子组件传值"><a href="#父—》子组件传值" class="headerlink" title="父—》子组件传值"></a>父—》子组件传值</h3><h3 id="子—》父组件传值"><a href="#子—》父组件传值" class="headerlink" title="子—》父组件传值"></a>子—》父组件传值</h3><h2 id="V-BIND是什么—–》动态绑定属性"><a href="#V-BIND是什么—–》动态绑定属性" class="headerlink" title="V-BIND是什么—–》动态绑定属性"></a>V-BIND是什么—–》动态绑定属性</h2><h2 id="VUE单页应用-SPA-开发有什么优点"><a href="#VUE单页应用-SPA-开发有什么优点" class="headerlink" title="VUE单页应用(SPA)开发有什么优点"></a>VUE单页应用(SPA)开发有什么优点</h2><p><strong>优点(交互体验好，前后端分离，服务器压力小)</strong></p>
+<p><strong>缺点（首次加载慢，不利于SEO搜索引擎，不适合大型项目开发）</strong></p>
+<p>一、优点(交互体验好，前后端分离，服务器压力小)</p>
+<p>1.良好的交互体验</p>
+<p>　　单页应用的内容的改变不需要重新加载整个页面，获取数据也是通过Ajax异步获取，没有页面之间的切换，就不会出现“白屏现象”,也不会出现假死并有“闪烁”现象，页面显示流畅，web应用更具响应性和更令人着迷。</p>
+<p>2.良好的前后端工作分离模式</p>
+<p>　　后端不再负责模板渲染、输出页面工作，后端API通用化，即同一套后端程序代码，不用修改就可以用于Web界面、手机、平板等多种客户端。</p>
+<p>3.减轻服务器压力</p>
+<p>　　单页应用相对服务器压力小，服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍。</p>
+<p>二、缺点（首次加载慢，不利于SEO搜索引擎，不适合大型项目开发）</p>
+<p>1.首屏加载慢</p>
+<ul>
+<li>如果不对路由进行处理，在加载首页的时候，就会将所有组件全部加载，并向服务器请求数据，这必将拖慢加载速度；</li>
+<li>通过查看Network，发现整个网站加载试讲长达10几秒，加载时间最长的就是js、css文件和媒体文件及图片</li>
+</ul>
+<p>　　<strong>解决方案：</strong></p>
+<ul>
+<li>Vue-router懒加载</li>
+</ul>
+<p>　　　　Vue-router懒加载就是按需加载组件，只有当路由被访问时才会加载对应的组件，而不是在加载首页的时候就加载，项目越大，对首屏加载的速度提升得越明显。</p>
+<ul>
+<li>使用CDN加速</li>
+</ul>
+<p>　　　　在做项目时，我们会用到很多库，采用cdn加载可以加快加载速度。</p>
+<ul>
+<li>异步加载组件</li>
+</ul>
+<p>　　　　这里可以参考别人的介绍（<a href="https://segmentfault.com/a/1190000012138052）" target="_blank" rel="noopener">https://segmentfault.com/a/1190000012138052）</a></p>
+<ul>
+<li>服务端渲染</li>
+</ul>
+<p>　　　　服务端渲染还能对seo优化起到作用，有利于搜索引擎抓取更多有用的信息（如果页面纯前端渲染，搜索引擎抓取到的就只是空页面）</p>
+<p>2.不利于SEO</p>
+<p>　　seo 本质是一个服务器向另一个服务器发起请求，解析请求内容。但一般来说搜索引擎是不会去执行请求到的js的。也就是说，搜索引擎的基础爬虫的原理就是抓取url，然后获取html源代码并解析。 如果一个单页应用，html在服务器端还没有渲染部分数据数据，在浏览器才渲染出数据，即搜索引擎请求到的html是模型页面而不是最终数据的渲染页面。 这样就很不利于内容被搜索引擎搜索到。</p>
+<p>　　<strong>解决方案：</strong></p>
+<ul>
+<li>服务端渲染</li>
+</ul>
+<p>　　　　服务器合成完整的 html 文件再输出到浏览器</p>
+<ul>
+<li>页面预渲染</li>
+<li>路由采用h5 history模式</li>
+</ul>
+<p>3.不适合开发大型项目</p>
+<p>　　大型项目中可能会涉及大量的DOM操作、复杂的动画效果，也就不适合使用Vue、react框架进行开发</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/images/wechat-qcode.jpg" alt="Xiognwei Zheng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/18/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%BD%91%E7%AB%99%E6%8A%80%E5%B7%A7/" rel="next" title="手机端MOBA网站开发总结">
+                <i class="fa fa-chevron-left"></i> 手机端MOBA网站开发总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/zxw_avatar.jpg"
+                alt="Xiognwei Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Xiognwei Zheng</p>
+              <p class="site-description motion-element" itemprop="description">不朽与不变，那是故事片段。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengxiongwei520" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhengxiongwei0502@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-CSS"><span class="nav-number">1.</span> <span class="nav-text">HTML&#x2F;CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端适配相关"><span class="nav-number">1.1.</span> <span class="nav-text">移动端适配相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一：JS配合修改配合rem适配"><span class="nav-number">1.1.1.</span> <span class="nav-text">方案一：JS配合修改配合rem适配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二："><span class="nav-number">1.1.2.</span> <span class="nav-text">方案二：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么实现1rem表示为50px？"><span class="nav-number">1.1.3.</span> <span class="nav-text">怎么实现1rem表示为50px？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript"><span class="nav-number">2.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组中的push-pop-unshift-shift用法"><span class="nav-number">2.1.</span> <span class="nav-text">数组中的push pop unshift shift用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript中改变this指向的方法-call-apply-bind的用法与区别"><span class="nav-number">2.2.</span> <span class="nav-text">JavaScript中改变this指向的方法&#x2F;call apply bind的用法与区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原生实现bind（bind-ES5才出现的）"><span class="nav-number">2.2.1.</span> <span class="nav-text">原生实现bind（bind ES5才出现的）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生实现call"><span class="nav-number">2.2.2.</span> <span class="nav-text">原生实现call</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式相关-RegExp"><span class="nav-number">2.3.</span> <span class="nav-text">正则表达式相关 RegExp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">3.</span> <span class="nav-text">Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用vue、为什么使用vue组件"><span class="nav-number">3.1.</span> <span class="nav-text">为什么使用vue、为什么使用vue组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-if-v-show区别"><span class="nav-number">3.2.</span> <span class="nav-text">v-if v-show区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双向数据绑定使用什么？它的原理是什么？"><span class="nav-number">3.3.</span> <span class="nav-text">双向数据绑定使用什么？它的原理是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路分析"><span class="nav-number">3.3.0.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#view视图数据变化更新data"><span class="nav-number">3.3.0.2.</span> <span class="nav-text">view视图数据变化更新data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data属性发生变化后更新view："><span class="nav-number">3.3.0.3.</span> <span class="nav-text">data属性发生变化后更新view：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的计算属性、方法、侦听属性"><span class="nav-number">3.4.</span> <span class="nav-text">vue的计算属性、方法、侦听属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算属性VS方法"><span class="nav-number">3.4.0.1.</span> <span class="nav-text">计算属性VS方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算属性VS侦听器（watch）"><span class="nav-number">3.4.0.2.</span> <span class="nav-text">计算属性VS侦听器（watch）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟DOM是什么"><span class="nav-number">3.5.</span> <span class="nav-text">虚拟DOM是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vuex"><span class="nav-number">3.6.</span> <span class="nav-text">vuex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue生命周期"><span class="nav-number">3.7.</span> <span class="nav-text">vue生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue组件传值"><span class="nav-number">3.8.</span> <span class="nav-text">vue组件传值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父—》子组件传值"><span class="nav-number">3.8.1.</span> <span class="nav-text">父—》子组件传值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子—》父组件传值"><span class="nav-number">3.8.2.</span> <span class="nav-text">子—》父组件传值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-BIND是什么—–》动态绑定属性"><span class="nav-number">3.9.</span> <span class="nav-text">V-BIND是什么—–》动态绑定属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VUE单页应用-SPA-开发有什么优点"><span class="nav-number">3.10.</span> <span class="nav-text">VUE单页应用(SPA)开发有什么优点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiognwei Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
