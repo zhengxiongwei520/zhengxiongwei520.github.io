@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="手机端," />
+  <meta name="keywords" content="手机端,scss,网站上线," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路。">
+<meta name="description" content="自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路，以及网站上线流程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="手机端MOBA网站开发总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;18&#x2F;%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%BD%91%E7%AB%99%E6%8A%80%E5%B7%A7&#x2F;index.html">
 <meta property="og:site_name" content="CodeZheng">
-<meta property="og:description" content="自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路。">
+<meta property="og:description" content="自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路，以及网站上线流程。">
 <meta property="article:published_time" content="2020-04-18T14:13:20.589Z">
-<meta property="article:modified_time" content="2020-04-16T17:36:05.210Z">
+<meta property="article:modified_time" content="2020-05-09T09:09:30.076Z">
 <meta property="article:author" content="Xiognwei Zheng">
 <meta property="article:tag" content="手机端">
+<meta property="article:tag" content="scss">
+<meta property="article:tag" content="网站上线">
 <meta name="twitter:card" content="summary">
 
 
@@ -333,7 +335,7 @@
 
           
               <div class="post-description">
-                  自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路。
+                  自己做的一个MOBA游戏移动端网站项目，一个手机端网站里有用的小技巧、设计总体思路，以及网站上线流程。
               </div>
           
 
@@ -404,6 +406,108 @@
 
 <h4 id="console台一些操作"><a href="#console台一些操作" class="headerlink" title="console台一些操作"></a>console台一些操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$(&#39;.news_list .title&#39;) &#x2F;&#x2F; 可以获取当前页面的数据</span><br><span class="line">$$(&#39;.news_lit .title&#39;).map(el &#x3D;&gt; el.innerTHML)  &#x2F;&#x2F; 获取HTML内容</span><br></pre></td></tr></table></figure>
 
+<h4 id="VUE时间过滤器"><a href="#VUE时间过滤器" class="headerlink" title="VUE时间过滤器"></a>VUE时间过滤器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">dataFormate(val, fmt) &#123;</span><br><span class="line">  <span class="keyword">let</span> getDate = <span class="keyword">new</span> <span class="built_in">Date</span>(val);</span><br><span class="line">  <span class="keyword">let</span> o = &#123;</span><br><span class="line">    <span class="comment">// year不写在这里是因为不用判断是否+0</span></span><br><span class="line">    <span class="string">"M+"</span>: getDate.getMonth() + <span class="number">1</span>,</span><br><span class="line">    <span class="string">"d+"</span>: getDate.getDate(),</span><br><span class="line">    <span class="string">"h+"</span>: getDate.getHours(),</span><br><span class="line">    <span class="string">"m+"</span>: getDate.getMinutes(),</span><br><span class="line">    <span class="string">"s+"</span>: getDate.getSeconds(),</span><br><span class="line">    <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((getDate.getMonth() + <span class="number">3</span>) / <span class="number">3</span>), <span class="comment">// 季度</span></span><br><span class="line">    S: getDate.getMilliseconds() <span class="comment">// 毫秒</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(fmt)) &#123;</span><br><span class="line">    <span class="comment">// 判断是否需要出现年份</span></span><br><span class="line">    fmt = fmt.replace(</span><br><span class="line">      <span class="built_in">RegExp</span>.$<span class="number">1</span>,</span><br><span class="line">      (getDate.getFullYear() + <span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length)</span><br><span class="line">    );</span><br><span class="line">    <span class="comment">// 有需要就把 fmt中的 yyyy替代成年份 有几个Y显示几个数字</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(fmt)) &#123;</span><br><span class="line">      fmt = fmt.replace(</span><br><span class="line">        <span class="built_in">RegExp</span>.$<span class="number">1</span>,</span><br><span class="line">        <span class="built_in">RegExp</span>.$<span class="number">1.</span>length === <span class="number">1</span></span><br><span class="line">          ? o[k]</span><br><span class="line">          : (<span class="string">"00"</span> + o[k]).substr(<span class="built_in">String</span>(o[k]).length)</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fmt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本超出省略"><a href="#文本超出省略" class="headerlink" title="文本超出省略"></a>文本超出省略</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.text-ellipsis</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="蒙版渐变"><a href="#蒙版渐变" class="headerlink" title="蒙版渐变"></a>蒙版渐变</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.info&#123;</span><br><span class="line">	backgournd:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="生产环境编译"><a href="#生产环境编译" class="headerlink" title="生产环境编译"></a>生产环境编译</h2><p>我手头上的是一个全站项目，分别有三个文件夹，web admin server。如何通过访问server地址可以访问到web admin？那就是把web admin当成静态资源一样在server中暴露出来，前提是吧web admin文件夹加到server中。</p>
+<p>step1:改变项目的访问数据库地址 </p>
+<p>但是当你访问dist的js文件时会发现baseURL是访问的本地连接localhost:3000/admin/api，如果上传到服务器之后肯定是访问不到数据。所以，根据环境不同需要替换baseURL。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// admin http.js</span></span><br><span class="line"><span class="keyword">const</span> http = axios.http(&#123;</span><br><span class="line">	baseURL:process.env.VUE_APP_API_URL || <span class="string">'/admin/api'</span>,   </span><br><span class="line">    <span class="comment">// process是webpakc打包之后才产生的 process.env 表示环境变量</span></span><br><span class="line">	<span class="comment">// baseURL:'localhost:3000/amin/api' </span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// admin src .env.development 没有.env.development就自己创建一个 </span></span><br><span class="line"><span class="comment">// .env.development 开发环境下使用的环境变量也就是没有上线时使用的</span></span><br><span class="line">VUE_APP_API_URL = http:<span class="comment">//localhost:3000/admin/api         // 注意/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 总结</span></span><br><span class="line">baseURL:process.env.VUE_APP_API_URL || <span class="string">'/admin/api'</span></span><br><span class="line"><span class="comment">// 没上线就访问process.env.VUE_APP_API_URL 上线到xx域名了，就会访问xx/admin/api</span></span><br></pre></td></tr></table></figure>
+
+<p>step2：将web admin编译到server文件下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// admin文件夹 vue.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  outputDir: __dirname + <span class="string">'/../server/admin'</span>,   <span class="comment">// 编译之后的dist存储地址</span></span><br><span class="line">  publicPath: process.env.NODE_ENV == <span class="string">'production'</span> ?  <span class="comment">// </span></span><br><span class="line">    <span class="string">'/admin/'</span> :</span><br><span class="line">    <span class="string">'/'</span></span><br><span class="line">  <span class="comment">//  如果是生产环境，就可以通过，生产环境URL+/admin/来访问，开发环境默认是/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// web同理</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run build  &#x2F;&#x2F; 会在当前文件夹生成dist</span><br><span class="line">&#x2F;&#x2F; 直接编译 会把当前项目编译成纯粹的静态文件html css js，然后将静态文件上传到域名，开启端口就可以访问</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 如何查看</span><br><span class="line">npm i -g serve</span><br><span class="line">server dist  &#x2F;&#x2F;就可以通过本地访问dist辣</span><br></pre></td></tr></table></figure>
+
+<p>step3：server将admin web静态文件暴露出来</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// server-&gt;index.js   需要安装express和path</span></span><br><span class="line">app.use(<span class="string">'/admin'</span>, express.static(path.join(__dirname, <span class="string">'/admin'</span>)))</span><br><span class="line">app.use(<span class="string">'/web'</span>, express.static(path.join(__dirname, <span class="string">'/web'</span>)))</span><br></pre></td></tr></table></figure>
+
+<h2 id="购买域名，连接域名"><a href="#购买域名，连接域名" class="headerlink" title="购买域名，连接域名"></a>购买域名，连接域名</h2><p>step1:购买域名</p>
+<p>aliyu.com购买自己想要的域名。</p>
+<p>大陆服务器都需要备案，台湾香港的不需要，但是微信网站小程序不允许非备案网站进行开发。我选择的香港的，因为就是个人做来玩玩。</p>
+<p>step2：购买服务器以及配置服务器</p>
+<p>aliyun.com购买云服务器ECS。</p>
+<p>选择香港服务器最便宜，并且不用备案。突发性能实例 t5   0.05￥/h。</p>
+<p>接着选择镜像，其实就是你服务器的操作系统是什么。Ubuntu–18.04 64位</p>
+<p>默认专有网络 使用流量计费的10Mbps带宽峰值 安全组默认 使用自定义密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">基础配置 </span><br><span class="line">付费模式 ：按量付费</span><br><span class="line">地域及可用区 ：中国（香港） &#x2F; 随机分配</span><br><span class="line">实例 ：突发性能实例 t5 &#x2F; ecs.t5-lc2m1.nano(1vCPU 0.5GiB)</span><br><span class="line">购买数量 ：1 台</span><br><span class="line">镜像 ：Ubuntu 18.04 64位(安全加固)</span><br><span class="line">系统盘 ：高效云盘 40GiB , 随实例释放</span><br><span class="line">网络和安全组 网络 ：专有网络 VPC ：默认专有网络 交换机 ：默认交换机</span><br><span class="line">公网带宽 ： 按使用流量 10Mbps </span><br><span class="line">安全组 ：1). 默认安全组（自定义端口） 系统配置  登录凭证 ： 自定义密码 实例名称 ：launch-advisor-20200506 描述 ：test web</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip </span><br><span class="line">输入密码</span><br><span class="line">链接服务器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linux 服务器一些命令</span><br><span class="line">ls 当前文件夹   ls -al 文件详细信息</span><br><span class="line">pwd 当前在哪个文件夹 </span><br><span class="line">cd &#x2F; 进入根路径</span><br><span class="line">cd ~ 进入个人文件夹</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window使用git Bash可以黑窗口链接</span><br><span class="line">&#x2F;&#x2F; git Bash</span><br><span class="line">ssh root@ip</span><br><span class="line">yes</span><br><span class="line">然后输入password</span><br><span class="line">&#x2F;&#x2F; 链接成功后就可以在BASH窗口操作服务器</span><br></pre></td></tr></table></figure>
+
+<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>进入阿里云域名控制台，点击解析，添加记录。</p>
+<p>域名只是一个别名而已，真正访问的其实是服务器的那个IP地址。解析就是当你访问域名的时候，对应到哪个IP。</p>
+<h2 id="Nginx安装和配置"><a href="#Nginx安装和配置" class="headerlink" title="Nginx安装和配置"></a>Nginx安装和配置</h2><p>服务器因为是linux系统，所以需要使用nginx来搭建web服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 连接服务器 apt是Ubuntu命令</span><br><span class="line">apt show nginx &#x2F;&#x2F; 是否有nginx</span><br><span class="line">apt update &#x2F;&#x2F; 更新软件包</span><br><span class="line">apt show nginx &#x2F;&#x2F; 查看信息，嫌弃版本太低自己安装</span><br><span class="line">apt install nginx -y &#x2F;&#x2F; 安装新版本</span><br></pre></td></tr></table></figure>
+
+<p>有很多新手朋友在配置了自己的网站后，浏览器输入域名却打不开网站，如果你用的是阿里云的服务器，那么你可能是安全组里面没有放行80端口</p>
+<p>登陆阿里云，点击ECS详情信息左边会有实例安全组的设置，点击进去设置</p>
+<p>点击操作，接着右上角的添加安全组规则，然后加一条放行80/80端口的记录，授权对象为0.0.0.0/0。接下来可以直接访问域名了，如果现实welcome to nginx就所以你成功了。</p>
+<h2 id="安装MongoDB数据"><a href="#安装MongoDB数据" class="headerlink" title="安装MongoDB数据"></a>安装MongoDB数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt show mongodb &#x2F;&#x2F; 这是客户端</span><br><span class="line">apt install mongodb-server -y  &#x2F;&#x2F; 服务端</span><br><span class="line">mongo &#x2F;&#x2F; 进入数据库</span><br><span class="line">show dbs &#x2F;&#x2F; mongo命令，现实有多少个数据</span><br><span class="line">exit 退出</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装GIT"><a href="#安装GIT" class="headerlink" title="安装GIT"></a>安装GIT</h2><p>使用GIT来同步代码很方便，不然要先从本地复制到服务器上，GIT只需要拉一下就可以。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install -y git</span><br><span class="line">ssh keygen 	&#x2F;&#x2F; 配置SSH KEY 这样服务器就可以拉代码</span><br><span class="line">cat &#x2F;root&#x2F;.ssh&#x2F;id_rsa &#x2F;&#x2F; 获取KEY</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装NODE-JS-淘宝镜像"><a href="#安装NODE-JS-淘宝镜像" class="headerlink" title="安装NODE.JS 淘宝镜像"></a>安装NODE.JS 淘宝镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apt install -y nodejs</span><br><span class="line">apt install -y npm</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org  &#x2F;&#x2F; 设置镜像</span><br><span class="line">npm i -g nrm  &#x2F;&#x2F; 切换镜像地址  nrm current    nrm use npm  nrm use taobao</span><br><span class="line">npm i -g n  &#x2F;&#x2F; 安装n 可以升级自身</span><br><span class="line">n latest  &#x2F;&#x2F; 升级node</span><br><span class="line">退出重新连接exit，ssh root@test.topfullstack.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="拉取代码"><a href="#拉取代码" class="headerlink" title="拉取代码"></a>拉取代码</h2><ol>
+<li><p>先向GITHUB提交代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull &#x2F;&#x2F; 拉取他人代码</span><br><span class="line">git status &#x2F;&#x2F; 查看项目状态</span><br><span class="line">git add . &#x2F;&#x2F;  把改动过的文件添加到缓存区中</span><br><span class="line">git commit -m &#39;xxx&#39;  &#x2F;&#x2F; 推送到本地git库中</span><br><span class="line">git push &#x2F;&#x2F; 推送到github中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将SSH-KEYGEN添加到仓库的公钥，拉取克隆代码</p>
+</li>
+</ol>
+<p>开发使用nodemon 服务器使用pm2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 服务器操作</span><br><span class="line">cd &#x2F;  -&gt;  ll -&gt;  cd &#x2F;var&#x2F;www  -&gt;  cd html -&gt; mkdir &#x2F;data </span><br><span class="line">&#x2F;&#x2F; 总之就是你自己选择一个地方创建data文件</span><br><span class="line">git clone &#39;你的github地址&#39;</span><br><span class="line">&#x2F;&#x2F; 进入项目文件的server</span><br><span class="line">npm i &#x2F;&#x2F; 安装node_modules</span><br><span class="line">npm i -g pm2 &#x2F;&#x2F; 用来启动服务器 不然使用node启动会占用端口并且关闭就停止服务</span><br><span class="line">pm2 start index.js</span><br></pre></td></tr></table></figure>
+
+<p><code>使用npm遇到报错，把package.json node_modules删掉并输入npm cache verify清除缓存重新npm i</code></p>
+<h2 id="nginx反向代理"><a href="#nginx反向代理" class="headerlink" title="nginx反向代理"></a>nginx反向代理</h2><ol>
+<li>安装VSCODE插件REMOTE-SSH，可以像管理本地文件夹一样管理服务器。</li>
+</ol>
+<p>安装之后左边图标多了一个电脑图标，点击创建一个SSH TARGERT.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host test-moba</span><br><span class="line">    HostName moba.bearer.top</span><br><span class="line">    User root</span><br></pre></td></tr></table></figure>
+
+<p>通过ctrl+shift+p打开设置Remote-SSH:Settings，设置Remote.SSH:Show Login Terminal为true，然后就可以连接了。</p>
+<ul>
+<li><p>点击设置配置文件，点击小窗口进入</p>
+</li>
+<li><p>连接之后打开/etc/nginx/，还需要输入密码。</p>
+</li>
+</ul>
+<ul>
+<li>去nginx配置网站，<strong><a href="https://www.digitalocean.com/community/tools/nginx" target="_blank" rel="noopener">https://www.digitalocean.com/community/tools/nginx</a></strong></li>
+<li>选择nodejs，进入server，填入自己域名，https不启用，最后下载，反向代理启用注意看端口是否3000，其他都禁用。</li>
+</ul>
+<ul>
+<li><p>把nginxconfig.io文件夹复制过去到/etc/nginx/下，把available里面的文件复制到sites-available文件夹中，把enabled里面的文件复制到sites-enabled文件中。</p>
+</li>
+<li><p>重载nginx的配置文件，<code>service nginx reload</code></p>
+</li>
+<li><p>重启服务器<code>pm2 start server/index.js</code></p>
+</li>
+</ul>
+<h2 id="迁移本地数据到服务器（mongodump）"><a href="#迁移本地数据到服务器（mongodump）" class="headerlink" title="迁移本地数据到服务器（mongodump）"></a>迁移本地数据到服务器（mongodump）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodump -d node-vue-moba  &#x2F;&#x2F; 导出数据库</span><br></pre></td></tr></table></figure>
+
+<p>导出数据库会获得一个dump文件，然后通过REMOTE-SSH把dump文件添加到服务器中，接着使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoresotre &#x2F;&#x2F; 把文件转成数据库</span><br></pre></td></tr></table></figure>
+
+<p>登录网站存储到本地的图片有错,返回给前端的地址是3000端口，需要修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">postUpload</span>(<span class="params">uploadWhere</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> app.post(<span class="string">`/admin/api/upload/<span class="subst">$&#123;uploadWhere&#125;</span>`</span>, authMiddleWare(), upload(uploadWhere).single(<span class="string">'file'</span>), <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> file = req.file</span><br><span class="line">    <span class="comment">// file.url = `http://localhost:3000/admin/api/upload/$&#123;uploadWhere&#125;/$&#123;file.filename&#125;`</span></span><br><span class="line">    file.url = <span class="string">`http://moba.bearer.top/admin/api/upload/<span class="subst">$&#123;uploadWhere&#125;</span>/<span class="subst">$&#123;file.filename&#125;</span>`</span></span><br><span class="line">    res.send(file)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 
 
 
@@ -442,6 +546,10 @@
         <div class="post-tags">
           
             <a href="/tags/%E6%89%8B%E6%9C%BA%E7%AB%AF/" rel="tag"># 手机端</a>
+          
+            <a href="/tags/scss/" rel="tag"># scss</a>
+          
+            <a href="/tags/%E7%BD%91%E7%AB%99%E4%B8%8A%E7%BA%BF/" rel="tag"># 网站上线</a>
           
         </div>
       
@@ -569,7 +677,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -618,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。"><span class="nav-number">1.</span> <span class="nav-text">使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。"><span class="nav-number">2.</span> <span class="nav-text">样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站色彩和字体定义"><span class="nav-number">3.</span> <span class="nav-text">网站色彩和字体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex布局"><span class="nav-number">4.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用边距"><span class="nav-number">5.</span> <span class="nav-text">常用边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将scss中的样式变量分开"><span class="nav-number">6.</span> <span class="nav-text">将scss中的样式变量分开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#native状态有下划线"><span class="nav-number">7.</span> <span class="nav-text">native状态有下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#精灵图片"><span class="nav-number">8.</span> <span class="nav-text">精灵图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体图标"><span class="nav-number">9.</span> <span class="nav-text">字体图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装card组件"><span class="nav-number">10.</span> <span class="nav-text">封装card组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装ListCard组件"><span class="nav-number">11.</span> <span class="nav-text">封装ListCard组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果通过不同方式访问一个页面数据不刷新，记得给router-view加key"><span class="nav-number">12.</span> <span class="nav-text">如果通过不同方式访问一个页面数据不刷新，记得给router-view加key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最新吸顶效果"><span class="nav-number">13.</span> <span class="nav-text">最新吸顶效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#console台一些操作"><span class="nav-number">14.</span> <span class="nav-text">console台一些操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。"><span class="nav-number">1.</span> <span class="nav-text">使用SASS（SCSS）来实现类样式的复用，或许可以称为通用（基本）样式（工具样式）？就像类设计模式那样，给会经常使用样式包装起来，后续网页需要样式时只需要添加对应类名。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。"><span class="nav-number">2.</span> <span class="nav-text">样式重置，设计网页第一步。要么自己写，要么使用normalize、cssreset，别人写好的常见样式重置。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站色彩和字体定义"><span class="nav-number">3.</span> <span class="nav-text">网站色彩和字体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex布局"><span class="nav-number">4.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用边距"><span class="nav-number">5.</span> <span class="nav-text">常用边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将scss中的样式变量分开"><span class="nav-number">6.</span> <span class="nav-text">将scss中的样式变量分开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#native状态有下划线"><span class="nav-number">7.</span> <span class="nav-text">native状态有下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#精灵图片"><span class="nav-number">8.</span> <span class="nav-text">精灵图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体图标"><span class="nav-number">9.</span> <span class="nav-text">字体图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装card组件"><span class="nav-number">10.</span> <span class="nav-text">封装card组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装ListCard组件"><span class="nav-number">11.</span> <span class="nav-text">封装ListCard组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果通过不同方式访问一个页面数据不刷新，记得给router-view加key"><span class="nav-number">12.</span> <span class="nav-text">如果通过不同方式访问一个页面数据不刷新，记得给router-view加key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最新吸顶效果"><span class="nav-number">13.</span> <span class="nav-text">最新吸顶效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#console台一些操作"><span class="nav-number">14.</span> <span class="nav-text">console台一些操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VUE时间过滤器"><span class="nav-number">15.</span> <span class="nav-text">VUE时间过滤器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本超出省略"><span class="nav-number">16.</span> <span class="nav-text">文本超出省略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#蒙版渐变"><span class="nav-number">17.</span> <span class="nav-text">蒙版渐变</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产环境编译"><span class="nav-number"></span> <span class="nav-text">生产环境编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购买域名，连接域名"><span class="nav-number"></span> <span class="nav-text">购买域名，连接域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析"><span class="nav-number"></span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx安装和配置"><span class="nav-number"></span> <span class="nav-text">Nginx安装和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装MongoDB数据"><span class="nav-number"></span> <span class="nav-text">安装MongoDB数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装GIT"><span class="nav-number"></span> <span class="nav-text">安装GIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装NODE-JS-淘宝镜像"><span class="nav-number"></span> <span class="nav-text">安装NODE.JS 淘宝镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取代码"><span class="nav-number"></span> <span class="nav-text">拉取代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx反向代理"><span class="nav-number"></span> <span class="nav-text">nginx反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迁移本地数据到服务器（mongodump）"><span class="nav-number"></span> <span class="nav-text">迁移本地数据到服务器（mongodump）</span></a></div>
             
 
           </div>
