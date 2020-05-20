@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小程序," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="电商小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电商小程序">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;13&#x2F;%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE&#x2F;index.html">
+<meta property="og:site_name" content="CodeZheng">
+<meta property="og:description" content="电商小程序">
+<meta property="article:published_time" content="2020-05-12T16:08:46.361Z">
+<meta property="article:modified_time" content="2020-05-20T09:07:31.577Z">
+<meta property="article:author" content="Xiognwei Zheng">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/13/小程序电商项目/"/>
+
+
+
+
+
+  <title>电商小程序 | CodeZheng</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CodeZheng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiognwei Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/zxw_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeZheng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">电商小程序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T00:08:46+08:00">
+                2020-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  电商小程序
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="小程序第三方框架"><a href="#小程序第三方框架" class="headerlink" title="小程序第三方框架"></a>小程序第三方框架</h3><ol>
+<li>腾讯 wepy   -&gt; vue</li>
+<li>美团 mpvue   -&gt; vue</li>
+<li>京东 taro   -&gt; react</li>
+<li>滴滴 chameleon/变色龙</li>
+<li>uni-app  -&gt; vue</li>
+</ol>
+<p>目前小程序原生迭代速度比较快，还不推荐学习框架，等原生稳定之后再使用框架更好。</p>
+<p>所以这个项目是使用原生小程序API来开发。</p>
+<hr>
+<p>代码就不全部复制上来了，后面会贴github项目地址。</p>
+<h1 id="搭建项目"><a href="#搭建项目" class="headerlink" title="搭建项目"></a>搭建项目</h1><ol>
+<li>后端接口不是自己构建的，使用他人的接口和文档。 <a href="https://www.showdoc.cc/128719739414963" target="_blank" rel="noopener">https://www.showdoc.cc/128719739414963</a></li>
+<li>帮助文档-》》》 小程序开发文档    MDN  阿里巴巴字体库</li>
+</ol>
+<hr>
+<p>0.VSCOED使用的插件有EASY WXLESS/minapp/wxml/wechat-snippet</p>
+<p>其中EASY WXLESS需要配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; setting.json</span><br><span class="line">&#123;</span><br><span class="line">	    &quot;less.compile&quot;: &#123;</span><br><span class="line">        &quot;outExt&quot;: &quot;.wxss&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>1.使用开发者工具创建新项目，需要使用APPID，自己去小程序官网申请。</p>
+<p>2.清理无关代码，建立项目结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">styles 存放公共样式</span><br><span class="line">components 存放组件</span><br><span class="line">lib  第三方库</span><br><span class="line">utils	自己的帮助库</span><br><span class="line">request		接口帮助库</span><br></pre></td></tr></table></figure>
+
+<p>3.新建所有需要的页面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.json</span></span><br><span class="line">  "pages": [</span><br><span class="line">    "pages/index/index",</span><br><span class="line">    "pages/category/index",</span><br><span class="line">    "pages/goods_list/index",</span><br><span class="line">    "pages/goods_detail/index",</span><br><span class="line">    "pages/cart/index",</span><br><span class="line">    "pages/collect/index",</span><br><span class="line">    "pages/order/index",</span><br><span class="line">    "pages/search/index",</span><br><span class="line">    "pages/user/index",</span><br><span class="line">    "pages/feedback/index",</span><br><span class="line">    "pages/login/index",</span><br><span class="line">    "pages/auth/index",</span><br><span class="line">    <span class="string">"pages/pay/index"</span> </span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+
+<p>4.引入字体图标</p>
+<p><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a> 去阿里巴巴图标库找到自己需要的图标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">购物车 付款 分 享 订单 付款通知 客服 收货地址 收 藏  收 藏    &#x2F;&#x2F; 1个实心1个空心</span><br></pre></td></tr></table></figure>
+
+<p>找到这些图标加入到项目中，查看Font class的在线链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;at.alicdn.com&#x2F;t&#x2F;font_1815272_lcqkb5x0sm.css</span><br></pre></td></tr></table></figure>
+
+<p>打开它，然后把代码复制到我们的项目的style-&gt;iconfont.wxss。</p>
+<p>接着，在app.wxss引入它，就可以全局使用 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; app.wxss</span><br><span class="line">@import &#39;.&#x2F;styles&#x2F;iconfont.wxss&#39;</span><br></pre></td></tr></table></figure>
+
+<p>在页面中如何使用？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;text class&#x3D;&quot;iconfont icon-fenxiang&quot;&gt;&lt;&#x2F;text&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5.搭建tabbar</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">"tabBar": &#123;</span><br><span class="line">  "color": "#707070",</span><br><span class="line">  "selectedColor": "#D81E06",</span><br><span class="line">  "backgroundColor": "#fafafa",</span><br><span class="line">  "position": "bottom",</span><br><span class="line">  "borderStyle": "black",</span><br><span class="line">  "list": [&#123;</span><br><span class="line">    "pagePath": "pages/index/index",</span><br><span class="line">    "text": "首页",</span><br><span class="line">    "iconPath": "./icons/shouye.png",</span><br><span class="line">    "selectedIconPath": "./icons/shouye1.png"</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    "pagePath": "pages/category/index",</span><br><span class="line">    "text": "分类",</span><br><span class="line">    "iconPath": "./icons/fenlei.png",</span><br><span class="line">    "selectedIconPath": "./icons/fenlei1.png"</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    "pagePath": "pages/cart/index",</span><br><span class="line">    "text": "购物车",</span><br><span class="line">    "iconPath": "./icons/gouwuche.png",</span><br><span class="line">    "selectedIconPath": "./icons/gouwuche1.png"</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    "pagePath": "pages/user/index",</span><br><span class="line">    "text": "我的",</span><br><span class="line">    "iconPath": "./icons/yonghu.png",</span><br><span class="line">    "selectedIconPath": "./icons/yonghu1.png"</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>6.初始化项目样式</p>
+<p>小程序不支持通配符*。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; app.wxss</span><br></pre></td></tr></table></figure>
+
+<h1 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h1><h4 id="搜索框"><a href="#搜索框" class="headerlink" title="搜索框"></a>搜索框</h4><p>搜索框应该组建化，因为多个页面内都要用到它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;usingComponents&quot;:&#123;</span><br><span class="line">    &quot;SearchInput&quot;:&quot;..&#x2F;..&#x2F;components&#x2F;SearchInput&#x2F;SearchInput&quot;</span><br><span class="line">  &#125;</span><br><span class="line"> &#x2F;&#x2F; 哪个页面需要用就像这样引入</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class&#x3D;&quot;serach_input&quot;&gt;</span><br><span class="line">  &lt;navigator url&#x3D;&quot;&#x2F;pages&#x2F;search&#x2F;index&quot; open-type&#x3D;&quot;navigate&quot;&gt;</span><br><span class="line">  搜索</span><br><span class="line">  &lt;&#x2F;navigator&gt;</span><br><span class="line">&lt;&#x2F;view&gt;</span><br><span class="line"></span><br><span class="line">@import &#39;..&#x2F;..&#x2F;styles&#x2F;&#x2F;_variable.less&#39;;</span><br><span class="line">view&#123;</span><br><span class="line">  height: 90rpx;</span><br><span class="line">  padding: 10rpx 0;</span><br><span class="line">  background-color: @themeColor;</span><br><span class="line">  navigator&#123;</span><br><span class="line">    height: 100%;</span><br><span class="line">    margin: 0 10rpx;</span><br><span class="line">    display: flex;</span><br><span class="line">    background-color: white;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">    border-radius: 15rpx;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class&#x3D;&quot;index_swiper&quot;&gt;</span><br><span class="line">  &lt;swiper autoplay&#x3D;&quot;&#123;&#123;true&#125;&#125;&quot; indicator-dots&#x3D;&quot;&#123;&#123;true&#125;&#125;&quot; circular&#x3D;&quot;&#123;&#123;true&#125;&#125;&quot;&gt;</span><br><span class="line">    &lt;swiper-item wx:for&#x3D;&quot;&#123;&#123;swiperList&#125;&#125;&quot; wx:key&#x3D;&quot;goods_id&quot;&gt;</span><br><span class="line">      &lt;navigator url&#x3D;&quot;&#x2F;pages&#x2F;index&#x2F;index&quot;&gt;</span><br><span class="line">        &lt;image src&#x3D;&quot;&#123;&#123;item.image_src&#125;&#125;&quot; mode&#x3D;&quot;widthFix&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">      &lt;&#x2F;navigator&gt;</span><br><span class="line">    &lt;&#x2F;swiper-item&gt;</span><br><span class="line">  &lt;&#x2F;swiper&gt;</span><br><span class="line">&lt;&#x2F;view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.home_page&#123;</span><br><span class="line">  .index_swiper&#123;</span><br><span class="line">    swiper&#123;</span><br><span class="line">      width: 750rpx;</span><br><span class="line">      height: 340rpx;</span><br><span class="line">    &#125;</span><br><span class="line">    image&#123;</span><br><span class="line">      width: 100%;</span><br><span class="line">      height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 导航栏开始 --&gt;</span><br><span class="line">&lt;view class&#x3D;&quot;nav&quot;&gt;</span><br><span class="line">  &lt;navigator class&#x3D;&quot;nav-item&quot; wx:for&#x3D;&quot;&#123;&#123;navList&#125;&#125;&quot; wx:key&#x3D;&quot;&#123;&#123;image_src&#125;&#125;&quot; url&#x3D;&quot;&#123;&#123;navigator_url&#125;&#125;&quot;&gt;</span><br><span class="line">    &lt;image src&#x3D;&quot;&#123;&#123;item.image_src&#125;&#125;&quot; mode&#x3D;&quot;widthFix&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">    &lt;view class&#x3D;&quot;&quot; hover-class&#x3D;&quot;none&quot; hover-stop-propagation&#x3D;&quot;false&quot;&gt;&lt;&#x2F;view&gt;</span><br><span class="line">  &lt;&#x2F;navigator&gt;</span><br><span class="line">&lt;&#x2F;view&gt;</span><br><span class="line">&lt;!-- 导航栏结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="楼层"><a href="#楼层" class="headerlink" title="楼层"></a>楼层</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 楼层开始 --&gt;</span><br><span class="line">&lt;view class&#x3D;&quot;floor&quot; wx:for&#x3D;&quot;&#123;&#123;floorData&#125;&#125;&quot; wx:for-item&#x3D;&quot;item1&quot; wx-for-index&#x3D;&quot;index1&quot; wx:key&#x3D;&quot;&#123;&#123;index1&#125;&#125;&quot;&gt;</span><br><span class="line">  &lt;view class&#x3D;&quot;title&quot;&gt;</span><br><span class="line">    &lt;image mode&#x3D;&quot;widthFix&quot;  class&#x3D;&quot;title&quot; src&#x3D;&quot;&#123;&#123;item1.floor_title.image_src&#125;&#125;&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;view class&#x3D;&quot;body&quot;&gt;</span><br><span class="line">    &lt;navigator wx:for&#x3D;&quot;&#123;&#123;item1.product_list&#125;&#125;&quot; wx:for-item&#x3D;&quot;item2&quot; wx:for-index&#x3D;&quot;index2&quot; wx:key&#x3D;&quot;index2&quot;&gt;</span><br><span class="line">      &lt;image  mode&#x3D;&quot;&#123;&#123;index2&#x3D;&#x3D;0?&#39;widthFix&#39;:&#39;scaleToFill&#39;&#125;&#125;&quot; src&#x3D;&quot;&#123;&#123;item2.image_src&#125;&#125;&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">    &lt;&#x2F;navigator&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;view&gt;</span><br><span class="line">&lt;!-- 楼层结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="分类页面"><a href="#分类页面" class="headerlink" title="分类页面"></a>分类页面</h1><h4 id="使用wx自带的滚动组件-scroll-view，scroll-y为true表示y轴滚动，-scroll-top表示默认的top位置"><a href="#使用wx自带的滚动组件-scroll-view，scroll-y为true表示y轴滚动，-scroll-top表示默认的top位置" class="headerlink" title="使用wx自带的滚动组件 scroll-view，scroll-y为true表示y轴滚动， scroll-top表示默认的top位置"></a>使用wx自带的滚动组件 scroll-view，scroll-y为true表示y轴滚动， scroll-top表示默认的top位置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class&#x3D;&quot;cates_container&quot;&gt;</span><br><span class="line">  &lt;!-- 左侧菜单开始 --&gt;</span><br><span class="line">  &lt;scroll-view class&#x3D;&quot;left_menu&quot; scroll-y&#x3D;&quot;&#123;&#123;true&#125;&#125;&quot; scroll-top&#x3D;&quot;0&quot;&gt;</span><br><span class="line">    &lt;view class&#x3D;&quot;left_menu_item &#123;&#123;active &#x3D;&#x3D; index ? &#39;active&#39; : &#39;&#39;&#125;&#125;&quot; wx:for&#x3D;&quot;&#123;&#123;categoriesList&#125;&#125;&quot; wx:key&#x3D;&quot;cat_id&quot; bindtap&#x3D;&quot;changeIndex&quot; data-index&#x3D;&quot;&#123;&#123;index&#125;&#125;&quot;&gt;</span><br><span class="line">      &lt;view class&#x3D;&quot;name &#123;&#123;active &#x3D;&#x3D; index ? &#39;active&#39; : &#39;&#39;&#125;&#125;&quot;&gt;&#123;&#123;item.cat_name&#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">    &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;&#x2F;scroll-view&gt;</span><br><span class="line">  &lt;!-- 左侧菜单结束 --&gt;</span><br><span class="line">  &lt;!-- 右侧菜单开始 --&gt;</span><br><span class="line">  &lt;scroll-view class&#x3D;&quot;right_menu&quot; scroll-y&#x3D;&quot;&#123;&#123;true&#125;&#125;&quot; scroll-top&#x3D;&quot;0&quot;&gt;</span><br><span class="line">    &lt;view class&#x3D;&quot;right_menu_item&quot; wx:for&#x3D;&quot;&#123;&#123;categoriesList[active].children&#125;&#125;&quot; wx:key&#x3D;&quot;cat_id&quot; wx:for-item&#x3D;&quot;item1&quot; wx:for-index&#x3D;&quot;index1&quot;&gt;</span><br><span class="line">      &lt;view class&#x3D;&quot;title text-center&quot;&gt;</span><br><span class="line">        &#x2F;</span><br><span class="line">        &lt;text&gt;&#123;&#123;item1.cat_name&#125;&#125;&lt;&#x2F;text&gt;</span><br><span class="line">        &#x2F;</span><br><span class="line">      &lt;&#x2F;view&gt;</span><br><span class="line">      &lt;view class&#x3D;&quot;imageList&quot;&gt;</span><br><span class="line">        &lt;navigator url&#x3D;&quot;&#x2F;pages&#x2F;goods_list&#x2F;index?cid&#x3D;&#123;&#123;item2.cat_id&#125;&#125;&quot; class&#x3D;&quot;img text-center&quot; wx:for&#x3D;&quot;&#123;&#123;item1.children&#125;&#125;&quot; wx:for-item&#x3D;&quot;item2&quot; wx:for-index&#x3D;&quot;index2&quot; wx:key&#x3D;&quot;cat_id&quot;&gt;</span><br><span class="line">          &lt;image src&#x3D;&quot;&#123;&#123;item2.cat_icon&#125;&#125;&quot; mode&#x3D;&quot;scaleToFill&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">          &lt;view class&#x3D;&quot;&quot;&gt;&#123;&#123;item2.cat_name&#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">        &lt;&#x2F;navigator&gt;</span><br><span class="line">      &lt;&#x2F;view&gt;</span><br><span class="line">    &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;&#x2F;scroll-view&gt;</span><br><span class="line">  &lt;!-- 右侧菜单结束 --&gt;</span><br><span class="line">&lt;&#x2F;view&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置缓存"><a href="#设置缓存" class="headerlink" title="设置缓存"></a>设置缓存</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;  引入 request.js</span><br><span class="line">import &#123; request &#125; from &#39;..&#x2F;..&#x2F;request&#x2F;index&#39;;</span><br><span class="line">&#x2F;&#x2F; pages&#x2F;category&#x2F;index.js</span><br><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  &#x2F;**</span><br><span class="line">   * 页面的初始数据</span><br><span class="line">   *&#x2F;</span><br><span class="line">  data: &#123;</span><br><span class="line">    active: 0,</span><br><span class="line">    categoriesList: []</span><br><span class="line">  &#125;,</span><br><span class="line">  changeIndex(e) &#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      active: e.currentTarget.dataset.index</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;**</span><br><span class="line">   * 生命周期函数--监听页面加载</span><br><span class="line">   *&#x2F;</span><br><span class="line">  onLoad: function (options) &#123;</span><br><span class="line">    const cates &#x3D; wx.getStorageSync(&#39;cates&#39;);</span><br><span class="line">    if (!cates) &#123;</span><br><span class="line">      &#x2F;&#x2F; 缓存中没有cates</span><br><span class="line">      this.fetchCategories()</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      &#x2F;&#x2F; 有cates</span><br><span class="line">      if (Date.now() - cates.time &lt; 1000 * 60 * 5) &#123;</span><br><span class="line">        &#x2F;&#x2F; 缓存存在事件小于5min</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          categoriesList: cates.data</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        this.fetchCategories()</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  async fetchCategories() &#123;</span><br><span class="line">    const res &#x3D; await request(&#123; url: &#39;&#x2F;categories&#39; &#125;)</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      categoriesList: res.data.message</span><br><span class="line">    &#125;)</span><br><span class="line">    wx.setStorageSync(&#39;cates&#39;, &#123;</span><br><span class="line">      time:Date.now(),</span><br><span class="line">      data:res.data.message</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="商品列表"><a href="#商品列表" class="headerlink" title="商品列表"></a>商品列表</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"goods_list_page"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">SearchInput</span>&gt;</span><span class="tag">&lt;/<span class="name">SearchInput</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Tbas</span> <span class="attr">tabs</span>=<span class="string">"&#123;&#123;tabs&#125;&#125;"</span> <span class="attr">bindtabsIndexChang</span>=<span class="string">"getTabIndex"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;tabs[0].isActive&#125;&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"first_tab"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">navigator</span> <span class="attr">class</span>=<span class="string">"goods_item"</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;goodsList&#125;&#125;"</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 商品左侧 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"goods_item_left"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">image</span> <span class="attr">mode</span>=<span class="string">"widthFix"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item.goods_small_logo?item.goods_small_logo:'http://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 商品右侧 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"goods_item_right"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"good_name"</span>&gt;</span>&#123;&#123;item.goods_name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"good_price"</span>&gt;</span>&#123;&#123;item.goods_price&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">navigator</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:elif</span>=<span class="string">"&#123;&#123;tabs[1].isActive&#125;&#125;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:elif</span>=<span class="string">"&#123;&#123;tabs[2].isActive&#125;&#125;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Tbas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里使用到了父子组件传值，其实跟vue差不多。子向父就是this.$emit()改成this.triggerEvent()，父向子就是不写冒号使用&#123;&#123;&#125;&#125;。:tabs&#x3D;&quot;tabs&quot;    tabs&#x3D;&quot;&#123;&#123;tabs&#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="上拉刷新和下拉加载"><a href="#上拉刷新和下拉加载" class="headerlink" title="上拉刷新和下拉加载"></a>上拉刷新和下拉加载</h2><h4 id="上拉刷新，必须先配置页面"><a href="#上拉刷新，必须先配置页面" class="headerlink" title="上拉刷新，必须先配置页面"></a>上拉刷新，必须先配置页面</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.json页面配置文件</span></span><br><span class="line">  "backgroundTextStyle":"dark", // 样式</span><br><span class="line">  "enablePullDownRefresh": true  // 开启上拉刷新</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">onPullDownRefresh() &#123;</span><br><span class="line">  <span class="comment">// 刷新动画</span></span><br><span class="line">  <span class="comment">// wx.startPullDownRefresh();  不要再添加这个了，现在默认有动画</span></span><br><span class="line">  <span class="comment">// 重置商品数组</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">  <span class="keyword">this</span>.setData(&#123; <span class="attr">goodsList</span>: [] &#125;)</span><br><span class="line">  <span class="comment">// // 重置页数</span></span><br><span class="line">  <span class="keyword">this</span>.QueryParams.pagenum = <span class="number">1</span></span><br><span class="line">  <span class="keyword">this</span>.getGoodsList()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="下拉加载，其实是触底加载"><a href="#下拉加载，其实是触底加载" class="headerlink" title="下拉加载，其实是触底加载"></a>下拉加载，其实是触底加载</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  QueryParams: &#123;</span><br><span class="line">    query: <span class="string">""</span>,</span><br><span class="line">    cid: <span class="string">""</span>,</span><br><span class="line">    pagenum: <span class="number">1</span>,</span><br><span class="line">    pagesize: <span class="number">10</span></span><br><span class="line">  &#125;,</span><br><span class="line">  totalPages: <span class="number">1</span>,  </span><br><span class="line"></span><br><span class="line">onReachBottom() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.QueryParams.pagenum &lt; <span class="keyword">this</span>.totalPages) &#123;</span><br><span class="line">      <span class="comment">// 判断是否还有下一页，默认当前页数1。获取总页数==总total/pagesize每页多少个 向上取整</span></span><br><span class="line">      <span class="comment">// 有就加载 </span></span><br><span class="line">      <span class="keyword">this</span>.QueryParams.pagenum++</span><br><span class="line">      <span class="keyword">this</span>.getGoodsList()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 没有就弹窗显示没有</span></span><br><span class="line">      wx.showToast(&#123;</span><br><span class="line">        title: <span class="string">'已经加载到底'</span>,</span><br><span class="line">        icon: <span class="string">'none'</span>,</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>我发送一个数据给后端，里面的参数有第几页，一页多少个数据。后端返回给我数据，并且总共的商品数据。我要算出一共商品有多少页(总商品数/一页多少数据)，向上取整。默认当前页数是第一页，每次触底就多加一页。</p>
+<h2 id="全局-加载中-图标效果"><a href="#全局-加载中-图标效果" class="headerlink" title="全局 加载中 图标效果"></a>全局 加载中 图标效果</h2><h4 id="微信自带API"><a href="#微信自带API" class="headerlink" title="微信自带API"></a>微信自带API</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wx.showLoading(&#123;</span><br><span class="line">  title: <span class="string">'加载中'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  wx.hideLoading()</span><br><span class="line">&#125;, <span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在request中添加，就可以每次request请求都有动画。</p>
+<p>另外要考虑一个问题，如果一个页面有多个请求同时发送，如何做到全部接受后再把加载图标关闭？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request -&gt; index.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 统计发送了几个异步请求</span></span><br><span class="line"><span class="keyword">let</span> ajaxTimes = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> request = <span class="function"><span class="params">params</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 定义公共URL</span></span><br><span class="line">  <span class="keyword">const</span> baseURL = <span class="string">'https://api-hmugo-web.itheima.net/api/public/v1'</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    ajaxTimes++</span><br><span class="line">    <span class="comment">// 显示加载动画</span></span><br><span class="line">    wx.showLoading(&#123;</span><br><span class="line">      title: <span class="string">'加载中'</span>,</span><br><span class="line">      mask: <span class="literal">true</span> <span class="comment">// 是否显示蒙版,有蒙版用户无法进行其他操作</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送请求</span></span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      ...params,</span><br><span class="line">      url: baseURL + params.url,</span><br><span class="line">      success: <span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(result)</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125;,</span><br><span class="line">      complete: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 判断是否异步请求都结束了</span></span><br><span class="line">        ajaxTimes--</span><br><span class="line">        <span class="keyword">if</span> (ajaxTimes === <span class="number">0</span>) &#123;</span><br><span class="line">          wx.hideLoading();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="商品详情页面"><a href="#商品详情页面" class="headerlink" title="商品详情页面"></a>商品详情页面</h2><h4 id="轮播图-1"><a href="#轮播图-1" class="headerlink" title="轮播图"></a>轮播图</h4><p>点击预览图片,给轮播图绑定点击事件bandtap，然后再方法中调用微信API即可预览。</p>
+<p>wx.previewImage({<br>  current: current,   // 当前点击的图片URL<br>  urls: urls // 要预览的图片URL数组<br>});</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 轮播图开始 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">swiper</span> <span class="attr">class</span>=<span class="string">"pic"</span> <span class="attr">autoplay</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span> <span class="attr">indicator-dots</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span> <span class="attr">circular</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;goodsDetail.pics&#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">swiper-item</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">bindtap</span>=<span class="string">"previewImage"</span> <span class="attr">data-current</span>=<span class="string">"&#123;&#123;item.pics_mid&#125;&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item.pics_mid&#125;&#125;"</span> <span class="attr">mode</span>=<span class="string">"widthFix"</span> <span class="attr">lazy-load</span>=<span class="string">"false"</span> <span class="attr">binderror</span>=<span class="string">""</span> <span class="attr">bindload</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 轮播图结束 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 轮播图点击预览</span></span><br><span class="line">previewImage(e) &#123;</span><br><span class="line">  <span class="keyword">const</span> urls = <span class="keyword">this</span>.goodsInfo.pics.map(<span class="function"><span class="params">v</span> =&gt;</span> v.pics_mid)  <span class="comment">// 手动调取商品详情中的轮播图</span></span><br><span class="line">  <span class="keyword">const</span> current = e.currentTarget.dataset.current</span><br><span class="line">  wx.previewImage(&#123;</span><br><span class="line">    current: current,</span><br><span class="line">    urls: urls</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h4 id="富文本"><a href="#富文本" class="headerlink" title="富文本"></a>富文本</h4><p>vue中使用v-html就可以展示富文本。</p>
+<p>小程序中需要使用rich-text</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">class</span>=<span class="string">"body mt-2 bg-grey"</span> <span class="attr">nodes</span>=<span class="string">"&#123;&#123;goodsDetail.goods_introduce&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="底部工具栏"><a href="#底部工具栏" class="headerlink" title="底部工具栏"></a>底部工具栏</h4><p>需要注意几个细节：</p>
+<ol>
+<li>button通过open-type可以调用一些功能，contact呼叫客户，share分享，这都是小程序提供的。</li>
+<li>navigator的默认type是不允许跳转小城的tabbar，需要改成switchTab才能跳转tabbar页面。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 底部工具栏开始 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"bottom_tool d-flex  w-100 bg-grey1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"tool_item flex-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"iconfont icon-kefu"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>客服<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"contact"</span> <span class="attr">open-type</span>=<span class="string">"contact"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"tool_item flex-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"iconfont icon-kefu"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>分享<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"contact"</span> <span class="attr">open-type</span>=<span class="string">"share"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">navigator</span> <span class="attr">url</span>=<span class="string">"/pages/cart/index"</span> <span class="attr">open-type</span>=<span class="string">"switchTab"</span> <span class="attr">class</span>=<span class="string">"tool_item flex-1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"iconfont icon-gouwuche"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>购物车<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">navigator</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"tool_item  flex-2 bg-theme btn_addCart text-white text-title"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">bindtap</span>=<span class="string">"addToCart"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>加入购物车<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"tool_item  flex-2 btn_buy text-white text-title"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>立即购买<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 底部工具栏结束 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="购物车相关"><a href="#购物车相关" class="headerlink" title="购物车相关"></a>购物车相关</h1><h4 id="添加-获取-地址："><a href="#添加-获取-地址：" class="headerlink" title="添加/获取 地址："></a>添加/获取 地址：</h4><p>用到的API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.getSetting()</span><br><span class="line">wx.openSetting()</span><br><span class="line">wx.chooseAddress()</span><br></pre></td></tr></table></figure>
+
+<p>步骤：</p>
+<ol>
+<li>获取设置getSetting，查看authSetting[“scope.address”]是否已授权地址，拒绝授权为false</li>
+<li>如果为false 则让用户打开设置界面 openSetting</li>
+<li>将选择的地址保存到缓存中。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> handleAddress() &#123;  </span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> res1 = <span class="keyword">await</span> getSetting()</span><br><span class="line">    <span class="keyword">const</span> scope = res1.authSetting[<span class="string">"scope.address"</span>]</span><br><span class="line">    <span class="keyword">if</span> (scope === <span class="literal">false</span>) &#123; <span class="comment">// 拒绝访问</span></span><br><span class="line">      openSetting()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> res2 = <span class="keyword">await</span> chooseAddress()</span><br><span class="line">    wx.setStorageSync(<span class="string">'address'</span>, res2);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="购物车每次选中-取消商品，加减商品数量都会改变总价格-总数量-是否全选-以及改变缓存中的商品数据，所以需要一个函数来计算。"><a href="#购物车每次选中-取消商品，加减商品数量都会改变总价格-总数量-是否全选-以及改变缓存中的商品数据，所以需要一个函数来计算。" class="headerlink" title="购物车每次选中/取消商品，加减商品数量都会改变总价格 总数量 是否全选 以及改变缓存中的商品数据，所以需要一个函数来计算。"></a>购物车每次选中/取消商品，加减商品数量都会改变总价格 总数量 是否全选 以及改变缓存中的商品数据，所以需要一个函数来计算。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算购物车页面</span></span><br><span class="line">setCardData() &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; cart &#125; = <span class="keyword">this</span>.data</span><br><span class="line">    <span class="comment">// 设置全选按钮</span></span><br><span class="line">    <span class="keyword">let</span> allChecked = cart.length ? cart.every(<span class="function"><span class="params">v</span> =&gt;</span> v.checked === <span class="literal">true</span>) : <span class="literal">false</span></span><br><span class="line">    <span class="comment">// 总价格/总数量</span></span><br><span class="line">    <span class="keyword">let</span> totalNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> totalPrice = <span class="number">0</span>;</span><br><span class="line">    cart.forEach(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (v.checked) &#123;</span><br><span class="line">        totalPrice += v.num * v.goods_price</span><br><span class="line">        totalNum += v.num</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      cart,</span><br><span class="line">      allChecked,</span><br><span class="line">      totalNum,</span><br><span class="line">      totalPrice</span><br><span class="line">    &#125;)</span><br><span class="line">    wx.setStorageSync(<span class="string">'cart'</span>, cart);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="增加-减少"><a href="#增加-减少" class="headerlink" title="增加/减少"></a>增加/减少</h4><p>给+ - 绑定事件，然后传递商品ID，接着改变cart数量就好了。</p>
+<h4 id="选中-不选中"><a href="#选中-不选中" class="headerlink" title="选中/不选中"></a>选中/不选中</h4><p>给复选框绑定事件，获取商品ID，每次点击checked取反，重新判断 是否全选</p>
+<h4 id="全选按钮"><a href="#全选按钮" class="headerlink" title="全选按钮"></a>全选按钮</h4><p>全选的checked取反，让cart数组的所有商品checked等于全选的checked</p>
+<h4 id="结算"><a href="#结算" class="headerlink" title="结算"></a>结算</h4><p>判断是否有选择地址，选择商品。有就跳转，没有就提示</p>
+<h1 id="支付相关信息"><a href="#支付相关信息" class="headerlink" title="支付相关信息"></a>支付相关信息</h1><p><strong>没有企业APPID不能进行支付测试，一个APPID支持多个开发者</strong></p>
+<h4 id="支付流程"><a href="#支付流程" class="headerlink" title="支付流程"></a>支付流程</h4><p>1.创建订单 2.，准备预支付 3.发起微信支付 4.查询订单</p>
+<h5 id="创建订单"><a href="#创建订单" class="headerlink" title="创建订单"></a>创建订单</h5><ul>
+<li>点击支付的时候，先判断缓存是否有token，没有就跳转到授权页面获取授权，有token就继续往下执行。</li>
+<li>获取token需要跟后端交互，访问后端接口并传用户信息过去，后端才能给你返回token。</li>
+<li>接口需要encryptedData, rawData, iv, signature, code这5个参数</li>
+<li>获取到token之后就返回上一级（支付页面）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class&#x3D;&quot;auth_page&quot;&gt;</span><br><span class="line">  &lt;button  open-type&#x3D;&quot;getUserInfo&quot; type&#x3D;&quot;primary&quot; bindgetuserinfo&#x3D;&quot;handleGetUserInfo&quot;&gt;</span><br><span class="line">    授权获得你的信息</span><br><span class="line">  &lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取用户信息页面 auth.js</span><br><span class="line">  async handleGetUserInfo(e) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      const &#123; encryptedData, rawData, iv, signature &#125; &#x3D; e.detail</span><br><span class="line">      if (!rawData) &#123;</span><br><span class="line">        &#x2F;&#x2F; 拒绝获取用户信息</span><br><span class="line">        return wx.showToast(&#123;</span><br><span class="line">          title: &#39;已拒绝授权用户信息&#39;,</span><br><span class="line">          icon: &#39;none&#39;,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F; 获取小程序登录后的code</span><br><span class="line">      const &#123; code &#125; &#x3D; await login()</span><br><span class="line">      &#x2F;&#x2F; 发送请求，获得用户token</span><br><span class="line">      const tokenParams &#x3D; &#123; encryptedData, rawData, iv, signature, code &#125;</span><br><span class="line">      console.log(code)</span><br><span class="line">      &#x2F;&#x2F; const &#123;token&#125; &#x3D; await request(&#123; url: &#39;&#x2F;users&#x2F;wxlogin&#39;, methods: &#39;POST&#39;, data: tokenParams&#125;)</span><br><span class="line">      const token &#x3D; &quot;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo&quot;</span><br><span class="line">      wx.setStorageSync(&#39;token&#39;, token);</span><br><span class="line">      wx.navigateBack(&#123;</span><br><span class="line">        delta: 1</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">      console.log(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断是否有token，没有就跳转，有就继续</li>
+<li>有token，访问预订单接口，需要参数，会返回一个订单编号</li>
+<li>通过订单编号，token访问预支付接口，会返回一个微信支付需要的对象</li>
+<li>有了这个pay对象就可以调用微信支付API</li>
+<li>手动删除已购买商品</li>
+<li>跳转页面</li>
+<li>优化。。。比如消息提示之类的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; pay index.js 支付页面</span><br><span class="line">async pay() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      const &#123; cart, totalPrice, address &#125; &#x3D; this.data</span><br><span class="line">      if (cart.length &#x3D;&#x3D; 0) &#123;</span><br><span class="line">        wx.showToast(&#123;</span><br><span class="line">          title: &#39;你还没有选择商品&#39;,</span><br><span class="line">          icon: &#39;none&#39;</span><br><span class="line">        &#125;);</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      if (!address.userName) &#123;</span><br><span class="line">        wx.showToast(&#123;</span><br><span class="line">          title: &#39;请选择地址&#39;,</span><br><span class="line">          icon: &#39;none&#39;</span><br><span class="line">        &#125;);</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 判断缓存中是否有token √</span><br><span class="line">      const token &#x3D; await wx.getStorageSync(&#39;token&#39;);</span><br><span class="line">      if (!token) &#123;</span><br><span class="line">        wx.navigateTo(&#123;</span><br><span class="line">          &#x2F;&#x2F; 跳转获得token页面</span><br><span class="line">          url: &#39;&#x2F;pages&#x2F;auth&#x2F;index&#39;,</span><br><span class="line">        &#125;);</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F; 有token创建订单</span><br><span class="line">      &#x2F;&#x2F; header参数</span><br><span class="line">      const header &#x3D; &#123; Authorization: token &#125;</span><br><span class="line">      &#x2F;&#x2F; 请求体参数</span><br><span class="line">      const order_price &#x3D; totalPrice</span><br><span class="line">      const consignee_addr &#x3D; address.all</span><br><span class="line">      let goods &#x3D; []</span><br><span class="line">      cart.forEach(v &#x3D;&gt; &#123;</span><br><span class="line">        goods.push(&#123;</span><br><span class="line">          goods_id: v.goods_id,</span><br><span class="line">          goods_number: v.goods_number,</span><br><span class="line">          goods_price: v.goods_price</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      const data &#x3D; &#123; order_price, consignee_addr, goods &#125;</span><br><span class="line">      &#x2F;&#x2F; 创建订单完成会返回一个订单编号</span><br><span class="line">      const &#123; order_number &#125; &#x3D; await request(&#123; url: &#39;&#x2F;orders&#x2F;create&#39;, methos: &#39;POST&#39;, data: data, header: header &#125;)</span><br><span class="line">      console.log(order_number, &#39;order_number&#39;);  </span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 使用token和订单编号来访问预支付接口，返回一个微信支付需要的对象</span><br><span class="line">      const &#123; pay &#125; &#x3D; await request(&#123; url: &#39;&#x2F;my&#x2F;orders&#x2F;req_unifiedorder&#39;, header, data: &#123; order_number &#125; &#125;)</span><br><span class="line">      console.log(pay, &#39;pay&#39;);</span><br><span class="line">      &#x2F;&#x2F; 有了pay就发起微信支付</span><br><span class="line">      wx.requestPayment(&#123;</span><br><span class="line">        ...pay,</span><br><span class="line">        success: (result) &#x3D;&gt; &#123;</span><br><span class="line">          console.log(&quot;支付成功&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      &#x2F;&#x2F; 查询订单状态</span><br><span class="line">      const status &#x3D; await request(&#123; url: &#39;&#x2F;my&#x2F;orders&#x2F;chkOrder&#39;, header, data: &#123; order_number &#125; &#125;)</span><br><span class="line">      console.log(status, &#39;status&#39;);</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 手动删除已购买的商品 √</span><br><span class="line">      let newCart &#x3D; cart.filter(v &#x3D;&gt; v.checked !&#x3D; true)</span><br><span class="line">      wx.setStorageSync(&#39;cart&#39;, newCart);</span><br><span class="line">      &#x2F;&#x2F; 跳转页面 √</span><br><span class="line">      wx.navigateTo(&#123;</span><br><span class="line">        url: &#39;&#x2F;pages&#x2F;order&#x2F;index&#39;,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">      console.log(error)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>点击按钮可以获取用户信息，encryptedData  rawData  iv  signature，以及小程序登录之后会返回一个code。把这几个传送给后端就能获取token。</p>
+<h1 id="订单页面"><a href="#订单页面" class="headerlink" title="订单页面"></a>订单页面</h1><p>加载页面时判断是否有token，没有的话就要去登录页面。</p>
+<p>有就访问接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">async getOorders() &#123;</span><br><span class="line">  const token &#x3D; wx.getStorageSync(&#39;token&#39;);</span><br><span class="line">  if (!token) &#123;</span><br><span class="line">    wx.navigateTo(&#123;</span><br><span class="line">      &#x2F;&#x2F; 跳转获得token页面</span><br><span class="line">      url: &#39;&#x2F;pages&#x2F;auth&#x2F;index&#39;,</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.showToast(&#123;</span><br><span class="line">      title: &#39;你没有登录，请前往登录！&#39;,</span><br><span class="line">      icon: &#39;none&#39;</span><br><span class="line">    &#125;);</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  const header &#x3D; &#123; Authorization: token &#125;</span><br><span class="line">  const &#123; type &#125; &#x3D; this.data</span><br><span class="line">  console.log(type)</span><br><span class="line">  const res &#x3D; await request(&#123; url: &#39;&#x2F;my&#x2F;orders&#x2F;all&#39;, header, data: &#123; type &#125; &#125;)</span><br><span class="line">  let orders &#x3D; res.data.message.orders</span><br><span class="line">  orders &#x3D; orders.map(v &#x3D;&gt; (&#123;</span><br><span class="line">    ...v,</span><br><span class="line">    time_cn: (new Date(v.update_time * 1000)).toLocaleString()</span><br><span class="line">  &#125;))</span><br><span class="line"></span><br><span class="line">  this.setData(&#123;</span><br><span class="line">    orders: orders</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="收藏页面"><a href="#收藏页面" class="headerlink" title="收藏页面"></a>收藏页面</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"collect_page bg-grey2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Tbas</span> <span class="attr">tabs</span>=<span class="string">"&#123;&#123;tabs&#125;&#125;"</span> <span class="attr">bindtabsIndexChang</span>=<span class="string">"getgetTabsIndex"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;index==0&#125;&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"nav d-flex ml-2"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"nav_item p-1 m-1 &#123;&#123;index === itemIndex ? 'active' : ''&#125;&#125;"</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;nav&#125;&#125;"</span> <span class="attr">wx:key</span>=<span class="string">"index"</span> <span class="attr">data-index</span>=<span class="string">"&#123;&#123;index&#125;&#125;"</span> <span class="attr">bindtap</span>=<span class="string">"changeNavItemIndex"</span>&gt;</span></span><br><span class="line">          &#123;&#123;item.name&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">navigator</span> <span class="attr">class</span>=<span class="string">"content_item m-2 bg-white d-flex"</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;collect&#125;&#125;"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"item_left flex-2 text-center"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"width:80%;"</span> <span class="attr">mode</span>=<span class="string">"widthFix"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item.goods_small_logo&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"item_right d-flex flex-4 flex-column jc-between p-2"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"goods_name text-hidden"</span>&gt;</span>&#123;&#123;item.goods_name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"goods_price text-theme"</span>&gt;</span>&#123;&#123;item.goods_price&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">navigator</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">wx:elif</span>=<span class="string">"&#123;&#123;index==1&#125;&#125;"</span>&gt;</span>品牌收藏<span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">wx:elif</span>=<span class="string">"&#123;&#123;index==2&#125;&#125;"</span>&gt;</span>店铺收藏<span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">wx:else</span>&gt;</span>浏览足迹<span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Tbas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pages/collect/index.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 页面的初始数据</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  data: &#123;</span><br><span class="line">    tabs: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">'商品收藏'</span>,</span><br><span class="line">      isActive: <span class="literal">true</span>,</span><br><span class="line">      id: <span class="number">0</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">'品牌收藏'</span>,</span><br><span class="line">      isActive: <span class="literal">false</span>,</span><br><span class="line">      id: <span class="number">1</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">'店铺收藏'</span>,</span><br><span class="line">      isActive: <span class="literal">false</span>,</span><br><span class="line">      id: <span class="number">2</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">'浏览足迹'</span>,</span><br><span class="line">      isActive: <span class="literal">false</span>,</span><br><span class="line">      id: <span class="number">3</span></span><br><span class="line">    &#125;],</span><br><span class="line">    nav: [</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">'全部'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">'正在热卖'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">'即将上线'</span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">    index: <span class="number">0</span>,</span><br><span class="line">    itemIndex: <span class="number">0</span>,</span><br><span class="line">    collect: []</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面加载</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> collect = wx.getStorageSync(<span class="string">'collect'</span>) || [];</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123; collect &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * tabs子组件传过来的值</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  getgetTabsIndex(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> index = e.detail</span><br><span class="line">    <span class="keyword">const</span> &#123; tabs &#125; = <span class="keyword">this</span>.data</span><br><span class="line">    tabs.forEach(<span class="function">(<span class="params">v, i</span>) =&gt;</span> &#123; i == index ? v.isActive = <span class="literal">true</span> : v.isActive = <span class="literal">false</span>, <span class="built_in">console</span>.log(i, index) &#125;)</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123; index, tabs &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * nav_item点击切换</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  changeNavItemIndex(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> index = e.currentTarget.dataset.index</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123; <span class="attr">itemIndex</span>: index &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/images/wechat-qcode.jpg" alt="Xiognwei Zheng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="next" title="前端面试题">
+                <i class="fa fa-chevron-left"></i> 前端面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/20/%E9%9A%BE%E8%AE%B0%E7%9A%84css/" rel="prev" title="一些比较有用，但是比较少用而且难记的CSS样式实现">
+                一些比较有用，但是比较少用而且难记的CSS样式实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/zxw_avatar.jpg"
+                alt="Xiognwei Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Xiognwei Zheng</p>
+              <p class="site-description motion-element" itemprop="description">不朽与不变，那是故事片段。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengxiongwei520" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhengxiongwei0502@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序第三方框架"><span class="nav-number">1.</span> <span class="nav-text">小程序第三方框架</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建项目"><span class="nav-number"></span> <span class="nav-text">搭建项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#首页"><span class="nav-number"></span> <span class="nav-text">首页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搜索框"><span class="nav-number">0.1.</span> <span class="nav-text">搜索框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮播图"><span class="nav-number">0.2.</span> <span class="nav-text">轮播图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导航栏"><span class="nav-number">0.3.</span> <span class="nav-text">导航栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#楼层"><span class="nav-number">0.4.</span> <span class="nav-text">楼层</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类页面"><span class="nav-number"></span> <span class="nav-text">分类页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用wx自带的滚动组件-scroll-view，scroll-y为true表示y轴滚动，-scroll-top表示默认的top位置"><span class="nav-number">0.1.</span> <span class="nav-text">使用wx自带的滚动组件 scroll-view，scroll-y为true表示y轴滚动， scroll-top表示默认的top位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置缓存"><span class="nav-number">0.2.</span> <span class="nav-text">设置缓存</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#商品列表"><span class="nav-number"></span> <span class="nav-text">商品列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上拉刷新和下拉加载"><span class="nav-number"></span> <span class="nav-text">上拉刷新和下拉加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上拉刷新，必须先配置页面"><span class="nav-number">0.1.</span> <span class="nav-text">上拉刷新，必须先配置页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下拉加载，其实是触底加载"><span class="nav-number">0.2.</span> <span class="nav-text">下拉加载，其实是触底加载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局-加载中-图标效果"><span class="nav-number"></span> <span class="nav-text">全局 加载中 图标效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#微信自带API"><span class="nav-number">0.1.</span> <span class="nav-text">微信自带API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商品详情页面"><span class="nav-number"></span> <span class="nav-text">商品详情页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#轮播图-1"><span class="nav-number">0.1.</span> <span class="nav-text">轮播图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#富文本"><span class="nav-number">0.2.</span> <span class="nav-text">富文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#底部工具栏"><span class="nav-number">0.3.</span> <span class="nav-text">底部工具栏</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#购物车相关"><span class="nav-number"></span> <span class="nav-text">购物车相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加-获取-地址："><span class="nav-number">0.1.</span> <span class="nav-text">添加&#x2F;获取 地址：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#购物车每次选中-取消商品，加减商品数量都会改变总价格-总数量-是否全选-以及改变缓存中的商品数据，所以需要一个函数来计算。"><span class="nav-number">0.2.</span> <span class="nav-text">购物车每次选中&#x2F;取消商品，加减商品数量都会改变总价格 总数量 是否全选 以及改变缓存中的商品数据，所以需要一个函数来计算。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加-减少"><span class="nav-number">0.3.</span> <span class="nav-text">增加&#x2F;减少</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选中-不选中"><span class="nav-number">0.4.</span> <span class="nav-text">选中&#x2F;不选中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全选按钮"><span class="nav-number">0.5.</span> <span class="nav-text">全选按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结算"><span class="nav-number">0.6.</span> <span class="nav-text">结算</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支付相关信息"><span class="nav-number"></span> <span class="nav-text">支付相关信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#支付流程"><span class="nav-number">0.1.</span> <span class="nav-text">支付流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建订单"><span class="nav-number">0.1.1.</span> <span class="nav-text">创建订单</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#订单页面"><span class="nav-number"></span> <span class="nav-text">订单页面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收藏页面"><span class="nav-number"></span> <span class="nav-text">收藏页面</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiognwei Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
